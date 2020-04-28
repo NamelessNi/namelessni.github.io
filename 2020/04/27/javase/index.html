@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
+<meta name="description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。  类和对象引用引用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javase">
 <meta property="og:url" content="http://yoursite.com/2020/04/27/javase/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
+<meta property="og:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。  类和对象引用引用">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-28T10:33:14.895Z">
+<meta property="og:updated_time" content="2020-04-28T10:47:24.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javase">
-<meta name="twitter:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
+<meta name="twitter:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。  类和对象引用引用">
 
 
 
@@ -323,25 +323,15 @@
 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。<br>
 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。<br>
 3.“static”表示方法是静态的，不依赖类的对象的。
-# 类和对象
-## 引用
-## 继承
-## 方法重载
-方法名一样 但是参数类型不一样
-## 构造方法
-通过一个类创建一个对象，这个过程叫做实例化。实例化是通过调用构造方法现实的。<br>
-构造方法名和类名一样 没有返回类型 当实例化一个对象时，必定调用构造方法。
-## this
-表示该对象 通常写this的时候，都是指“这个对象”或者“当前对象”，而且它本身表示对当前对象的引用。
-## 传参
-## 包
-## 访问修饰符
-## 类属性
-当一个属性被static修饰的时候，就叫做类属性，又叫做静态属性  
-当一个属性被声明成类属性，那么所有的对象，都共享一个值   可以用类名直接调用
-## 类方法
-类方法： 又叫做静态方法 
 
+<h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用的概念，如果一个变量的类型是 类类型，而非基本类型，那么该变量又叫做引用。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><p>方法名一样 但是参数类型不一样</p>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>通过一个类创建一个对象，这个过程叫做实例化。实例化是通过调用构造方法现实的。<br><br>构造方法名和类名一样 没有返回类型 当实例化一个对象时，必定调用构造方法。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>表示该对象 通常写this的时候，都是指“这个对象”或者“当前对象”，而且它本身表示对当前对象的引用。</p>
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><p>变量有两种类型 基本类型 和类类型</p>
+<p>参数也是变量，所以传参分为<br>基本类型传参<br>类类型传参</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><h2 id="类属性"><a href="#类属性" class="headerlink" title="类属性"></a>类属性</h2><p>当一个属性被static修饰的时候，就叫做类属性，又叫做静态属性<br>当一个属性被声明成类属性，那么所有的对象，都共享一个值   可以用类名直接调用</p>
+<h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><p>类方法： 又叫做静态方法 </p>
 <p>对象方法： 又叫实例方法，非静态方法 </p>
 <p>访问一个对象方法，必须建立在有一个对象的前提的基础上<br>访问类方法，不需要对象的存在，直接就访问</p>
 <h2 id="属性初始化"><a href="#属性初始化" class="headerlink" title="属性初始化"></a>属性初始化</h2><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>懒汉和饥汉</p>
@@ -512,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#public-static-void-main-String-args-是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">public static void main(String[] args)是什么意思？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性初始化"><span class="nav-number">2.</span> <span class="nav-text">属性初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">3.</span> <span class="nav-text">单例模式</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#接口与继承"><span class="nav-number"></span> <span class="nav-text">接口与继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写"><span class="nav-number">2.</span> <span class="nav-text">重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">4.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类"><span class="nav-number">5.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">6.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">7.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">8.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">9.</span> <span class="nav-text">StringBuffer</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#public-static-void-main-String-args-是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">public static void main(String[] args)是什么意思？</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#类和对象"><span class="nav-number"></span> <span class="nav-text">类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重载"><span class="nav-number">3.</span> <span class="nav-text">方法重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法"><span class="nav-number">4.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">5.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传参"><span class="nav-number">6.</span> <span class="nav-text">传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包"><span class="nav-number">7.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问修饰符"><span class="nav-number">8.</span> <span class="nav-text">访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类属性"><span class="nav-number">9.</span> <span class="nav-text">类属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法"><span class="nav-number">10.</span> <span class="nav-text">类方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性初始化"><span class="nav-number">11.</span> <span class="nav-text">属性初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">12.</span> <span class="nav-text">单例模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口与继承"><span class="nav-number"></span> <span class="nav-text">接口与继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写"><span class="nav-number">2.</span> <span class="nav-text">重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">4.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类"><span class="nav-number">5.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">6.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">7.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">8.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">9.</span> <span class="nav-text">StringBuffer</span></a></li></ol></li></div>
             
 
           </div>
