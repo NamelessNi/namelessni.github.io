@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="public static void main(String[] args)是什么意思？1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。2.public”表示程序的访问权限，表示的是任何的场合可以被引用。3.“static”表示方法是静态的，不依赖类的对象的。">
+<meta name="description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javase">
 <meta property="og:url" content="http://yoursite.com/2020/04/27/javase/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="public static void main(String[] args)是什么意思？1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。2.public”表示程序的访问权限，表示的是任何的场合可以被引用。3.“static”表示方法是静态的，不依赖类的对象的。">
+<meta property="og:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-27T10:08:48.849Z">
+<meta property="og:updated_time" content="2020-04-28T08:52:01.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javase">
-<meta name="twitter:description" content="public static void main(String[] args)是什么意思？1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。2.public”表示程序的访问权限，表示的是任何的场合可以被引用。3.“static”表示方法是静态的，不依赖类的对象的。">
+<meta name="twitter:description" content="public static void main(String[] args)是什么意思？ 1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。 2.public”表示程序的访问权限，表示的是任何的场合可以被引用。 3.“static”表示方法是静态的，不依赖类的对象的。 # 类和对象 ##">
 
 
 
@@ -319,7 +319,40 @@
       
 
       
-        <h1 id="public-static-void-main-String-args-是什么意思？"><a href="#public-static-void-main-String-args-是什么意思？" class="headerlink" title="public static void main(String[] args)是什么意思？"></a>public static void main(String[] args)是什么意思？</h1><p>1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。<br><br>2.public”表示程序的访问权限，表示的是任何的场合可以被引用。<br><br>3.“static”表示方法是静态的，不依赖类的对象的。<br></p>
+        <h1 id="public-static-void-main-String-args-是什么意思？"><a href="#public-static-void-main-String-args-是什么意思？" class="headerlink" title="public static void main(String[] args)是什么意思？"></a>public static void main(String[] args)是什么意思？</h1><br>
+1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。<br>
+2.public”表示程序的访问权限，表示的是任何的场合可以被引用。<br>
+3.“static”表示方法是静态的，不依赖类的对象的。<br>
+# 类和对象
+## 引用
+## 继承
+## 方法重载
+方法名一样 但是参数类型不一样
+## 构造方法
+通过一个类创建一个对象，这个过程叫做实例化。实例化是通过调用构造方法现实的。<br>
+构造方法名和类名一样 没有返回类型 当实例化一个对象时，必定调用构造方法。
+## this
+表示该对象 通常写this的时候，都是指“这个对象”或者“当前对象”，而且它本身表示对当前对象的引用。
+## 传参
+## 包
+## 访问修饰符
+## 类属性
+当一个属性被static修饰的时候，就叫做类属性，又叫做静态属性  
+当一个属性被声明成类属性，那么所有的对象，都共享一个值   可以用类名直接调用
+## 类方法
+类方法： 又叫做静态方法 
+
+<p>对象方法： 又叫实例方法，非静态方法 </p>
+<p>访问一个对象方法，必须建立在有一个对象的前提的基础上<br>访问类方法，不需要对象的存在，直接就访问</p>
+<h2 id="属性初始化"><a href="#属性初始化" class="headerlink" title="属性初始化"></a>属性初始化</h2><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>懒汉和饥汉</p>
+<h1 id="接口与继承"><a href="#接口与继承" class="headerlink" title="接口与继承"></a>接口与继承</h1><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>实现某个接口，就相当于承诺了某种约定</p>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>父类引用指向子类对象</p>
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><p>super只在子类中出现 <br><br>super.xxx; 调用父类属性<br><br>super.xxx(); 调用父类方法<br><br>super.(); 调用父类构造函数</p>
+<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>Object类是所有类的父类</p>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p>修饰类 类不能被继承  修饰方法 方法不能被重写 修饰属性 属性只有一次赋值的机会</p>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>用修饰符“abstract”修饰   与接口的区别</p>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>非静态内部类<br>静态内部类<br>匿名类<br>本地类</p>
+<h2 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h2><p>StringBuffer是可变长的字符串</p>
 
       
     </div>
@@ -353,6 +386,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/28/javase2/" rel="prev" title="javase2">
+                javase2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -429,7 +466,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -475,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#public-static-void-main-String-args-是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">public static void main(String[] args)是什么意思？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#public-static-void-main-String-args-是什么意思？"><span class="nav-number">1.</span> <span class="nav-text">public static void main(String[] args)是什么意思？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性初始化"><span class="nav-number">1.1.</span> <span class="nav-text">属性初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">1.2.</span> <span class="nav-text">单例模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口与继承"><span class="nav-number">2.</span> <span class="nav-text">接口与继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">2.1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写"><span class="nav-number">2.2.</span> <span class="nav-text">重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">2.3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">2.4.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类"><span class="nav-number">2.5.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">2.6.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">2.7.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">2.8.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">2.9.</span> <span class="nav-text">StringBuffer</span></a></li></ol></li></ol></div>
             
 
           </div>
