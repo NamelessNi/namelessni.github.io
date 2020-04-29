@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java 代理模式,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="代理模式中的所有角色（代理对象、目标对象、目标对象的接口）等都是在编译期就确定好的。 静态代理的用途 控制真实对象的访问权限 通过代理对象控制对真实对象的使用权限。 避免创建大对象 通过使用一个代理小对象来代表一个真实的大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。 增强真实对象的功能 这个比较简单，通过代理可以在调用真实对象的方法的前后增加额外功能。 静态代理还是存在一些局限性的">
-<meta name="keywords" content="java 代理模式">
+<meta name="description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
 <meta property="og:type" content="article">
-<meta property="og:title" content="静态、动态代理">
-<meta property="og:url" content="http://yoursite.com/2019/08/15/静态、动态代理/index.html">
+<meta property="og:title" content="spring">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/spring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代理模式中的所有角色（代理对象、目标对象、目标对象的接口）等都是在编译期就确定好的。 静态代理的用途 控制真实对象的访问权限 通过代理对象控制对真实对象的使用权限。 避免创建大对象 通过使用一个代理小对象来代表一个真实的大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。 增强真实对象的功能 这个比较简单，通过代理可以在调用真实对象的方法的前后增加额外功能。 静态代理还是存在一些局限性的">
+<meta property="og:description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T16:21:36.046Z">
+<meta property="og:updated_time" content="2020-04-29T08:29:57.663Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静态、动态代理">
-<meta name="twitter:description" content="代理模式中的所有角色（代理对象、目标对象、目标对象的接口）等都是在编译期就确定好的。 静态代理的用途 控制真实对象的访问权限 通过代理对象控制对真实对象的使用权限。 避免创建大对象 通过使用一个代理小对象来代表一个真实的大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。 增强真实对象的功能 这个比较简单，通过代理可以在调用真实对象的方法的前后增加额外功能。 静态代理还是存在一些局限性的">
+<meta name="twitter:title" content="spring">
+<meta name="twitter:description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/15/静态、动态代理/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/29/spring/">
 
 
 
 
 
-  <title>静态、动态代理 | Hexo</title>
+  <title>spring | Hexo</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/静态、动态代理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/spring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">静态、动态代理</h1>
+          <h1 class="post-title" itemprop="name headline">spring</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T19:01:02+08:00">
-                2019-08-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-29T16:28:16+08:00">
+                2020-04-29
               </time>
             
 
@@ -320,14 +319,9 @@
       
 
       
-        <p>代理模式中的所有角色（代理对象、目标对象、目标对象的接口）等都是在编译期就确定好的。</p>
-<p>静态代理的用途 控制真实对象的访问权限 通过代理对象控制对真实对象的使用权限。</p>
-<p>避免创建大对象 通过使用一个代理小对象来代表一个真实的大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。</p>
-<p>增强真实对象的功能 这个比较简单，通过代理可以在调用真实对象的方法的前后增加额外功能。</p>
-<p>静态代理还是存在一些局限性的，比如使用静态代理模式需要程序员手写很多代码，这个过程是比较浪费时间和精力的。一旦需要代理的类中方法比较多，或者需要同时代理多个对象的时候，这无疑会增加很大的复杂度。</p>
-<p>有没有一种方法，可以不需要程序员自己手写代理类呢。这就是动态代理啦。</p>
-<p>动态代理中的代理类并不要求在编译期就确定，而是可以在运行期动态生成，从而实现对目标对象的代理功能。</p>
-<p>反射是动态代理的一种实现方式。</p>
+        <p>Spring是一个基于IOC和AOP的结构J2EE系统的框架<br>IOC 反转控制 是Spring的基础，Inversion Of Control<br>简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象<br>DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。<br><br><br>以获取对象的方式来进行比较</p>
+<p>传统的方式：<br>通过new 关键字主动创建一个对象<br>IOC方式<br>对象的生命周期由Spring来管理，直接从Spring那里去获取一个对象。 IOC是反转控制 (Inversion Of Control)的缩写，就像控制权从本来在自己手里，交给了Spring。</p>
+<p>打个比喻：<br>传统方式：相当于你自己去菜市场new 了一只鸡，不过是生鸡，要自己拔毛，去内脏，再上花椒，酱油，烤制，经过各种工序之后，才可以食用。<br>用 IOC：相当于去馆子(Spring)点了一只鸡，交到你手上的时候，已经五味俱全，你就只管吃就行了。</p>
 
       
     </div>
@@ -343,12 +337,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/java-代理模式/" rel="tag"># java 代理模式</a>
-          
-        </div>
-      
 
       
       
@@ -358,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/05/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2020/04/29/javase3/" rel="next" title="javase3">
+                <i class="fa fa-chevron-left"></i> javase3
               </a>
             
           </div>
@@ -367,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/27/javase/" rel="prev" title="javase">
-                javase <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="异常异常定义导致程序的正常流程被中断的事件，叫做异常 异常处理try catch1.将可能抛出FileNotFoundException 文件不存在异常的代码放在try里2.如果文件存在，就会顺序往下执行，并且不执行catch块中的代码  如果文件不存在，try 里的代码会立即终止，程序流程会运行到对应的catch块中 e.printStackTrace(); 会打印出方法的调用痕迹，如此例，会打">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-28T10:06:28.893Z">
+<meta property="og:updated_time" content="2020-04-29T03:56:18.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javase2">
 <meta name="twitter:description" content="异常异常定义导致程序的正常流程被中断的事件，叫做异常 异常处理try catch1.将可能抛出FileNotFoundException 文件不存在异常的代码放在try里2.如果文件存在，就会顺序往下执行，并且不执行catch块中的代码  如果文件不存在，try 里的代码会立即终止，程序流程会运行到对应的catch块中 e.printStackTrace(); 会打印出方法的调用痕迹，如此例，会打">
@@ -327,7 +327,36 @@
 <li>FileNotFoundException是Exception的子类，使用Exception也可以catch住FileNotFoundException<h3 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h3>无论是否出现异常，finally中的代码都会被执行<h3 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h3>考虑如下情况：<br>主方法调用method1<br>method1调用method2<br>method2中打开文件</li>
 </ol>
 <p>method2中需要进行异常处理<br>但是method2不打算处理，而是把这个异常通过throws抛出去<br>那么method1就会接到该异常。 处理办法也是两种，要么是try catch处理掉，要么也是抛出去。<br>method1选择本地try catch住 一旦try catch住了，就相当于把这个异常消化掉了，主方法在调用method1的时候，就不需要进行异常处理了</p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>容器的容量”capacity”会随着对象的增加，自动增长<br>只需要不断往容器里增加英雄即可，不用担心会出现数组的边界问题。</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p>synchronized表示当前线程，独占 对象 someObject<br>当前线程独占 了对象someObject，如果有其他线程试图占有对象someObject，就会等待，直到当前线程释放对someObject的占用。<br><br>someObject 又叫同步对象，所有的对象，都可以作为同步对象<br>为了达到同步的效果，必须使用同一个同步对象<br></p>
+<p>释放同步对象的方式： synchronized 块自然结束，或者有异常抛出<br><br>如果一个类，其方法都是有synchronized修饰的，那么该类就叫做线程安全的类<br></p>
+<p>同一时间，只有一个线程能够进入 这种类的一个实例 的去修改数据，进而保证了这个实例中的数据的安全(不会同时被多线程修改而变成脏数据)</p>
+<h2 id="线程安全的类"><a href="#线程安全的类" class="headerlink" title="线程安全的类"></a>线程安全的类</h2><p>借助Collections.synchronizedList，可以把ArrayList转换为线程安全的List。</p>
+<p>与此类似的，还有HashSet,LinkedList,HashMap等等非线程安全的类，都通过工具类Collections转换为线程安全的</p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>当业务比较复杂，多线程应用里有可能会发生死锁<br></p>
+<ol>
+<li>线程1 首先占有对象1，接着试图占有对象2</li>
+<li>线程2 首先占有对象2，接着试图占有对象1</li>
+<li>线程1 等待线程2释放对象2</li>
+<li>与此同时，线程2等待线程1释放对象1<br>就会。。。一直等待下去，直到天荒地老，海枯石烂，山无棱 ，天地合。。。<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2>每一个线程的启动和结束都是比较消耗时间和占用资源的。</li>
+</ol>
+<p>如果在系统中用到了很多的线程，大量的启动和结束动作会导致系统的性能变卡，响应变慢。</p>
+<p>为了解决这个问题，引入线程池这种设计思想。</p>
+<p>线程池的模式很像生产者消费者模式，消费的对象是一个一个的能够运行的任务</p>
+<h3 id="线程池设计思路"><a href="#线程池设计思路" class="headerlink" title="线程池设计思路"></a>线程池设计思路</h3><p>线程池的思路和生产者消费者模型是很接近的。</p>
+<ol>
+<li>准备一个任务容器</li>
+<li>一次性启动10个 消费者线程</li>
+<li>刚开始任务容器是空的，所以线程都wait在上面。</li>
+<li>直到一个外部线程往这个任务容器中扔了一个“任务”，就会有一个消费者线程被唤醒notify</li>
+<li>这个消费者线程取出“任务”，并且执行这个任务，执行完毕后，继续等待下一次任务的到来。</li>
+<li>如果短时间内，有较多的任务加入，那么就会有多个线程被唤醒，去执行这些任务。</li>
+</ol>
+<p>在整个过程中，都不需要创建新的线程，而是循环使用这些已经存在的线程</p>
+<h2 id="lock对象"><a href="#lock对象" class="headerlink" title="lock对象"></a>lock对象</h2><p>与synchronized类似的，lock也能够达到同步的效果<br>与 synchronized (someObject) 类似的，lock()方法，表示当前线程占用lock对象，一旦占用，其他线程就不能占用了。<br><br>与 synchronized 不同的是，一旦synchronized 块结束，就会自动释放对someObject的占用。 lock却必须调用unlock方法进行手动释放，为了保证释放的执行，往往会把unlock() 放在finally中进行。</p>
+<h2 id="原子访问"><a href="#原子访问" class="headerlink" title="原子访问"></a>原子访问</h2><p>所谓的原子性操作即不可中断的操作，比如赋值操作.</p>
+<p>原子性操作本身是线程安全的<br>但是 i++ 这个行为，事实上是有3个原子性操作组成的。<br>步骤 1. 取 i 的值<br>步骤 2. i + 1<br>步骤 3. 把新的值赋予i<br>这三个步骤，每一步都是一个原子操作，但是合在一起，就不是原子操作。就不是线程安全的。<br>换句话说，一个线程在步骤1 取i 的值结束后，还没有来得及进行步骤2，另一个线程也可以取 i的值了。<br>这也是分析同步问题产生的原因 中的原理。<br>i++ ，i–， i = i+1 这些都是非原子性操作。<br>只有int i = 1,这个赋值操作是原子性的。</p>
+
       
     </div>
     
@@ -360,6 +389,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/29/javase3/" rel="prev" title="javase3">
+                javase3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -436,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -482,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常定义"><span class="nav-number">1.1.</span> <span class="nav-text">异常定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.2.</span> <span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try-catch"><span class="nav-number">1.2.1.</span> <span class="nav-text">try catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finally"><span class="nav-number">1.2.2.</span> <span class="nav-text">finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throws"><span class="nav-number">1.2.3.</span> <span class="nav-text">throws</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常定义"><span class="nav-number">1.1.</span> <span class="nav-text">异常定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.2.</span> <span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try-catch"><span class="nav-number">1.2.1.</span> <span class="nav-text">try catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finally"><span class="nav-number">1.2.2.</span> <span class="nav-text">finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#throws"><span class="nav-number">1.2.3.</span> <span class="nav-text">throws</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">2.2.</span> <span class="nav-text">list</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程"><span class="nav-number">3.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全的类"><span class="nav-number">3.1.</span> <span class="nav-text">线程安全的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁"><span class="nav-number">3.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互"><span class="nav-number">3.3.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池"><span class="nav-number">3.4.</span> <span class="nav-text">线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程池设计思路"><span class="nav-number">3.4.1.</span> <span class="nav-text">线程池设计思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lock对象"><span class="nav-number">3.5.</span> <span class="nav-text">lock对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原子访问"><span class="nav-number">3.6.</span> <span class="nav-text">原子访问</span></a></li></ol></li></ol></div>
             
 
           </div>
