@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
+<meta name="description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring">
 <meta property="og:url" content="http://yoursite.com/2020/04/29/spring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
+<meta property="og:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-29T08:29:57.663Z">
+<meta property="og:updated_time" content="2020-05-17T19:08:40.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring">
-<meta name="twitter:description" content="Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过new">
+<meta name="twitter:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
 
 
 
@@ -319,9 +319,17 @@
       
 
       
-        <p>Spring是一个基于IOC和AOP的结构J2EE系统的框架<br>IOC 反转控制 是Spring的基础，Inversion Of Control<br>简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象<br>DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。<br><br><br>以获取对象的方式来进行比较</p>
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Spring是一个基于IOC和AOP的结构J2EE系统的框架<br>IOC 反转控制 是Spring的基础，Inversion Of Control<br>简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象<br>DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。<br><br><br>以获取对象的方式来进行比较</p>
 <p>传统的方式：<br>通过new 关键字主动创建一个对象<br>IOC方式<br>对象的生命周期由Spring来管理，直接从Spring那里去获取一个对象。 IOC是反转控制 (Inversion Of Control)的缩写，就像控制权从本来在自己手里，交给了Spring。</p>
 <p>打个比喻：<br>传统方式：相当于你自己去菜市场new 了一只鸡，不过是生鸡，要自己拔毛，去内脏，再上花椒，酱油，烤制，经过各种工序之后，才可以食用。<br>用 IOC：相当于去馆子(Spring)点了一只鸡，交到你手上的时候，已经五味俱全，你就只管吃就行了。</p>
+<h1 id="ioc的底层实现"><a href="#ioc的底层实现" class="headerlink" title="ioc的底层实现"></a>ioc的底层实现</h1><p>工厂+反射+配置文件 实现程序解耦合；</p>
+<h1 id="ioc和di的区别"><a href="#ioc和di的区别" class="headerlink" title="ioc和di的区别"></a>ioc和di的区别</h1><p>控制反转 依赖注入<br><br>spring管理这个类的时候将类的依赖的属性注入进来。</p>
+<h1 id="spring的工厂类"><a href="#spring的工厂类" class="headerlink" title="spring的工厂类"></a>spring的工厂类</h1><p>BeanFactroy  调用getbean的时候创建实例,<br><br>applicationcontext，加载配置文件的时候将管理的类实例化。</p>
+<h1 id="spring的配置"><a href="#spring的配置" class="headerlink" title="spring的配置"></a>spring的配置</h1><h1 id="Bean的相关配置"><a href="#Bean的相关配置" class="headerlink" title="Bean的相关配置"></a>Bean的相关配置</h1><p>id和name的配置，id使用了约束中的唯一约束，name没有，name可以出现特殊字符。<br><br>Bean的生命周期，init，初始化，destroy，销毁。<br><br></p>
+<h1 id="属性注入的方式"><a href="#属性注入的方式" class="headerlink" title="属性注入的方式"></a>属性注入的方式</h1><p>给Bean中的属性设置值：<br><br>1.构造方法。在配置文件里面用construct-arg<br><br>2.set方法。property<br><br>3.接口注入的方式。（spring不支持）<br></p>
+<h1 id="p名称空间的属性注入"><a href="#p名称空间的属性注入" class="headerlink" title="p名称空间的属性注入"></a>p名称空间的属性注入</h1><p>通过引入p名称空间的属性注入<br><br>写法：普通属性   p:属性名=”值”<br><br> 对象 p：对象名-ref=”值”<br></p>
+<h1 id="spel的属性注入"><a href="#spel的属性注入" class="headerlink" title="spel的属性注入"></a>spel的属性注入</h1><p>spring的表达式语言。</p>
+<h1 id="集合类型的属性注入"><a href="#集合类型的属性注入" class="headerlink" title="集合类型的属性注入"></a>集合类型的属性注入</h1><p>注入数组类型：用property的标签 &lt;‘list&gt;&lt;’value&gt;值&lt;/value’&gt;&lt;/list‘&gt;<br></p>
 
       
     </div>
@@ -410,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -462,6 +479,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc的底层实现"><span class="nav-number">2.</span> <span class="nav-text">ioc的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc和di的区别"><span class="nav-number">3.</span> <span class="nav-text">ioc和di的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的工厂类"><span class="nav-number">4.</span> <span class="nav-text">spring的工厂类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的配置"><span class="nav-number">5.</span> <span class="nav-text">spring的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean的相关配置"><span class="nav-number">6.</span> <span class="nav-text">Bean的相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性注入的方式"><span class="nav-number">7.</span> <span class="nav-text">属性注入的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p名称空间的属性注入"><span class="nav-number">8.</span> <span class="nav-text">p名称空间的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spel的属性注入"><span class="nav-number">9.</span> <span class="nav-text">spel的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合类型的属性注入"><span class="nav-number">10.</span> <span class="nav-text">集合类型的属性注入</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
