@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
+<meta name="description" content="什么是事务？事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。 事务的特性原子性：事务不可分割一致性：事务执行前后数据完整性保持一致。隔离性：一个事务的执行不受到其他事务的干扰。持久性：一旦事务结束，数据就持久化到数据库。 不考虑隔离性引发的安全性问题脏读不可重复读虚读，幻读丢失更新 解决读问题sping事务管理的apiPlatformTransactionManage:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring">
-<meta property="og:url" content="http://yoursite.com/2020/04/29/spring/index.html">
+<meta property="og:title" content="spring的事务管理">
+<meta property="og:url" content="http://yoursite.com/2020/05/19/spring的事务管理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
+<meta property="og:description" content="什么是事务？事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。 事务的特性原子性：事务不可分割一致性：事务执行前后数据完整性保持一致。隔离性：一个事务的执行不受到其他事务的干扰。持久性：一旦事务结束，数据就持久化到数据库。 不考虑隔离性引发的安全性问题脏读不可重复读虚读，幻读丢失更新 解决读问题sping事务管理的apiPlatformTransactionManage:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-17T19:08:40.857Z">
+<meta property="og:updated_time" content="2020-05-18T18:50:06.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring">
-<meta name="twitter:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
+<meta name="twitter:title" content="spring的事务管理">
+<meta name="twitter:description" content="什么是事务？事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。 事务的特性原子性：事务不可分割一致性：事务执行前后数据完整性保持一致。隔离性：一个事务的执行不受到其他事务的干扰。持久性：一旦事务结束，数据就持久化到数据库。 不考虑隔离性引发的安全性问题脏读不可重复读虚读，幻读丢失更新 解决读问题sping事务管理的apiPlatformTransactionManage:">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/29/spring/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/19/spring的事务管理/">
 
 
 
 
 
-  <title>spring | Hexo</title>
+  <title>spring的事务管理 | Hexo</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/spring/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/19/spring的事务管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">spring</h1>
+          <h1 class="post-title" itemprop="name headline">spring的事务管理</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-29T16:28:16+08:00">
-                2020-04-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-19T02:29:57+08:00">
+                2020-05-19
               </time>
             
 
@@ -319,17 +319,12 @@
       
 
       
-        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Spring是一个基于IOC和AOP的结构J2EE系统的框架<br>IOC 反转控制 是Spring的基础，Inversion Of Control<br>简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象<br>DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。<br><br><br>以获取对象的方式来进行比较</p>
-<p>传统的方式：<br>通过new 关键字主动创建一个对象<br>IOC方式<br>对象的生命周期由Spring来管理，直接从Spring那里去获取一个对象。 IOC是反转控制 (Inversion Of Control)的缩写，就像控制权从本来在自己手里，交给了Spring。</p>
-<p>打个比喻：<br>传统方式：相当于你自己去菜市场new 了一只鸡，不过是生鸡，要自己拔毛，去内脏，再上花椒，酱油，烤制，经过各种工序之后，才可以食用。<br>用 IOC：相当于去馆子(Spring)点了一只鸡，交到你手上的时候，已经五味俱全，你就只管吃就行了。</p>
-<h1 id="ioc的底层实现"><a href="#ioc的底层实现" class="headerlink" title="ioc的底层实现"></a>ioc的底层实现</h1><p>工厂+反射+配置文件 实现程序解耦合；</p>
-<h1 id="ioc和di的区别"><a href="#ioc和di的区别" class="headerlink" title="ioc和di的区别"></a>ioc和di的区别</h1><p>控制反转 依赖注入<br><br>spring管理这个类的时候将类的依赖的属性注入进来。</p>
-<h1 id="spring的工厂类"><a href="#spring的工厂类" class="headerlink" title="spring的工厂类"></a>spring的工厂类</h1><p>BeanFactroy  调用getbean的时候创建实例,<br><br>applicationcontext，加载配置文件的时候将管理的类实例化。</p>
-<h1 id="spring的配置"><a href="#spring的配置" class="headerlink" title="spring的配置"></a>spring的配置</h1><h1 id="Bean的相关配置"><a href="#Bean的相关配置" class="headerlink" title="Bean的相关配置"></a>Bean的相关配置</h1><p>id和name的配置，id使用了约束中的唯一约束，name没有，name可以出现特殊字符。<br><br>Bean的生命周期，init，初始化，destroy，销毁。<br><br></p>
-<h1 id="属性注入的方式"><a href="#属性注入的方式" class="headerlink" title="属性注入的方式"></a>属性注入的方式</h1><p>给Bean中的属性设置值：<br><br>1.构造方法。在配置文件里面用construct-arg<br><br>2.set方法。property<br><br>3.接口注入的方式。（spring不支持）<br></p>
-<h1 id="p名称空间的属性注入"><a href="#p名称空间的属性注入" class="headerlink" title="p名称空间的属性注入"></a>p名称空间的属性注入</h1><p>通过引入p名称空间的属性注入<br><br>写法：普通属性   p:属性名=”值”<br><br> 对象 p：对象名-ref=”值”<br></p>
-<h1 id="spel的属性注入"><a href="#spel的属性注入" class="headerlink" title="spel的属性注入"></a>spel的属性注入</h1><p>spring的表达式语言。</p>
-<h1 id="集合类型的属性注入"><a href="#集合类型的属性注入" class="headerlink" title="集合类型的属性注入"></a>集合类型的属性注入</h1><p>注入数组类型：用property的标签 &lt;‘list&gt;&lt;’value&gt;值&lt;/value’&gt;&lt;/list‘&gt;<br></p>
+        <h1 id="什么是事务？"><a href="#什么是事务？" class="headerlink" title="什么是事务？"></a>什么是事务？</h1><p>事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。</p>
+<h1 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h1><p>原子性：事务不可分割<br><br>一致性：事务执行前后数据完整性保持一致。<br><br>隔离性：一个事务的执行不受到其他事务的干扰。<br><br>持久性：一旦事务结束，数据就持久化到数据库。<br></p>
+<h2 id="不考虑隔离性引发的安全性问题"><a href="#不考虑隔离性引发的安全性问题" class="headerlink" title="不考虑隔离性引发的安全性问题"></a>不考虑隔离性引发的安全性问题</h2><p>脏读<br>不可重复读<br>虚读，幻读<br>丢失更新</p>
+<h2 id="解决读问题"><a href="#解决读问题" class="headerlink" title="解决读问题"></a>解决读问题</h2><h1 id="sping事务管理的api"><a href="#sping事务管理的api" class="headerlink" title="sping事务管理的api"></a>sping事务管理的api</h1><p>PlatformTransactionManage:平台事务管理器：接口，是spring用于管理事务的真正对象<br><br><br>transactiondefinition:事务定义信息，用于定义事务相关的信息，隔离级别，超时信息，传播行为，是否只读。<br><br><br>transactionstatus；事务的状态，用于记录在事务管理过程中，事务的状态的对象。<br></p>
+<h2 id="事务管理api的关系"><a href="#事务管理api的关系" class="headerlink" title="事务管理api的关系"></a>事务管理api的关系</h2><p>spring进行事务管理的时候，首先平台事务管理器根据事务定义信息进行事务的管理，在事务管理的过程种毁，产生各种状态，将这个状态信息记录到事务状态的对象中。</p>
+<h2 id="spring事务的传播行为用途"><a href="#spring事务的传播行为用途" class="headerlink" title="spring事务的传播行为用途"></a>spring事务的传播行为用途</h2><p>主要用来解决业务层烦方法相互调用的问题。</p>
 
       
     </div>
@@ -354,8 +349,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/29/javase3/" rel="next" title="javase3">
-                <i class="fa fa-chevron-left"></i> javase3
+              <a href="/2020/05/19/aop/" rel="next" title="aop">
+                <i class="fa fa-chevron-left"></i> aop
               </a>
             
           </div>
@@ -363,10 +358,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/01/idea/" rel="prev" title="idea">
-                idea <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,7 +480,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc的底层实现"><span class="nav-number">2.</span> <span class="nav-text">ioc的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc和di的区别"><span class="nav-number">3.</span> <span class="nav-text">ioc和di的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的工厂类"><span class="nav-number">4.</span> <span class="nav-text">spring的工厂类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的配置"><span class="nav-number">5.</span> <span class="nav-text">spring的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean的相关配置"><span class="nav-number">6.</span> <span class="nav-text">Bean的相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性注入的方式"><span class="nav-number">7.</span> <span class="nav-text">属性注入的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p名称空间的属性注入"><span class="nav-number">8.</span> <span class="nav-text">p名称空间的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spel的属性注入"><span class="nav-number">9.</span> <span class="nav-text">spel的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合类型的属性注入"><span class="nav-number">10.</span> <span class="nav-text">集合类型的属性注入</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是事务？"><span class="nav-number">1.</span> <span class="nav-text">什么是事务？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务的特性"><span class="nav-number">2.</span> <span class="nav-text">事务的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不考虑隔离性引发的安全性问题"><span class="nav-number">2.1.</span> <span class="nav-text">不考虑隔离性引发的安全性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决读问题"><span class="nav-number">2.2.</span> <span class="nav-text">解决读问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sping事务管理的api"><span class="nav-number">3.</span> <span class="nav-text">sping事务管理的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务管理api的关系"><span class="nav-number">3.1.</span> <span class="nav-text">事务管理api的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring事务的传播行为用途"><span class="nav-number">3.2.</span> <span class="nav-text">spring事务的传播行为用途</span></a></li></ol></li></ol></div>
             
 
           </div>

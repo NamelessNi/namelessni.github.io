@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="title: spring的注解方式date: 2020-05-18 23:04:59 tags:spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service">
+<meta name="description" content="spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service，@repository 属性注入的注解普通属性：@Value对象属性：@Autowired，是按照">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="spring的注解方式">
 <meta property="og:url" content="http://yoursite.com/2020/05/18/spring的注解方式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: spring的注解方式date: 2020-05-18 23:04:59 tags:spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service">
+<meta property="og:description" content="spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service，@repository 属性注入的注解普通属性：@Value对象属性：@Autowired，是按照">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-18T16:36:20.956Z">
+<meta property="og:updated_time" content="2020-05-18T18:50:02.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: spring的注解方式date: 2020-05-18 23:04:59 tags:spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service">
+<meta name="twitter:title" content="spring的注解方式">
+<meta name="twitter:description" content="spring的注解开发1.创建项目，引入jar包2.引入spring的配置文件，在其中引入约束3.配置组件扫描（哪些包下的类要使用注解）4.在类/属性/方法上添加注解 注解详解@Component：组件修饰一个类，将这个类交给spring管理。有三个衍生注解：@controller，@service，@repository 属性注入的注解普通属性：@Value对象属性：@Autowired，是按照">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title> | Hexo</title>
+  <title>spring的注解方式 | Hexo</title>
   
 
 
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">spring的注解方式</h1>
         
 
         <div class="post-meta">
@@ -319,9 +319,7 @@
       
 
       
-        <hr>
-<p>title: spring的注解方式<br>date: 2020-05-18 23:04:59</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="spring的注解开发"><a href="#spring的注解开发" class="headerlink" title="spring的注解开发"></a>spring的注解开发</h1><p>1.创建项目，引入jar包<br><br>2.引入spring的配置文件，在其中引入约束<br><br>3.配置组件扫描（哪些包下的类要使用注解）<br><br>4.在类/属性/方法上添加注解<br></p>
+        <h1 id="spring的注解开发"><a href="#spring的注解开发" class="headerlink" title="spring的注解开发"></a>spring的注解开发</h1><p>1.创建项目，引入jar包<br><br>2.引入spring的配置文件，在其中引入约束<br><br>3.配置组件扫描（哪些包下的类要使用注解）<br><br>4.在类/属性/方法上添加注解<br></p>
 <h1 id="注解详解"><a href="#注解详解" class="headerlink" title="注解详解"></a>注解详解</h1><h2 id="Component：组件"><a href="#Component：组件" class="headerlink" title="@Component：组件"></a>@Component：组件</h2><p>修饰一个类，将这个类交给spring管理。<br>有三个衍生注解：@controller，@service，@repository</p>
 <h2 id="属性注入的注解"><a href="#属性注入的注解" class="headerlink" title="属性注入的注解"></a>属性注入的注解</h2><p>普通属性：@Value<br><br>对象属性：@Autowired，是按照类型进行的注入，为了按照名称注入，需要使用@Qualifier<br><br>@Resource:完成对象类型的属性注入，按照名称。  </p>
 <h2 id="bean的其他注解"><a href="#bean的其他注解" class="headerlink" title="bean的其他注解"></a>bean的其他注解</h2><p>生命周期：初始化，@postconstruct,销毁@pre<br><br>Bean作用范围的注解：<br>@scope:作用范围，singleton：默认单例：@prototype：多例<br></p>
@@ -439,7 +437,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -485,7 +483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的注解开发"><span class="nav-number"></span> <span class="nav-text">spring的注解开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注解详解"><span class="nav-number"></span> <span class="nav-text">注解详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Component：组件"><span class="nav-number">1.</span> <span class="nav-text">@Component：组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性注入的注解"><span class="nav-number">2.</span> <span class="nav-text">属性注入的注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bean的其他注解"><span class="nav-number">3.</span> <span class="nav-text">bean的其他注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml和注解的比较"><span class="nav-number">4.</span> <span class="nav-text">xml和注解的比较</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的注解开发"><span class="nav-number">1.</span> <span class="nav-text">spring的注解开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注解详解"><span class="nav-number">2.</span> <span class="nav-text">注解详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Component：组件"><span class="nav-number">2.1.</span> <span class="nav-text">@Component：组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性注入的注解"><span class="nav-number">2.2.</span> <span class="nav-text">属性注入的注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bean的其他注解"><span class="nav-number">2.3.</span> <span class="nav-text">bean的其他注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml和注解的比较"><span class="nav-number">2.4.</span> <span class="nav-text">xml和注解的比较</span></a></li></ol></li></ol></div>
             
 
           </div>
