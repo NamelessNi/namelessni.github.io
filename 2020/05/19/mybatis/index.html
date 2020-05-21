@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta name="description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea中web项目的目录结构">
-<meta property="og:url" content="http://yoursite.com/2020/05/14/idea中web项目的目录结构/index.html">
+<meta property="og:title" content="mybatis">
+<meta property="og:url" content="http://yoursite.com/2020/05/19/mybatis/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta property="og:description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-13T18:12:23.501Z">
+<meta property="og:updated_time" content="2020-05-20T10:40:51.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea中web项目的目录结构">
-<meta name="twitter:description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta name="twitter:title" content="mybatis">
+<meta name="twitter:description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/14/idea中web项目的目录结构/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/19/mybatis/">
 
 
 
 
 
-  <title>idea中web项目的目录结构 | Hexo</title>
+  <title>mybatis | Hexo</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/idea中web项目的目录结构/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/19/mybatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea中web项目的目录结构</h1>
+          <h1 class="post-title" itemprop="name headline">mybatis</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-14T02:07:42+08:00">
-                2020-05-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-19T12:12:31+08:00">
+                2020-05-19
               </time>
             
 
@@ -319,9 +319,18 @@
       
 
       
-        <p>1.out目录是输出java文件编译后生成的class文件。<br>2.src目录就是放java代码的文件夹。<br>3.webapp和web.xml是web项目的配置文件和资源目录<br>4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。</p>
-<h2 id="目录名称-描述"><a href="#目录名称-描述" class="headerlink" title="目录名称 描述"></a>目录名称 描述</h2><p>Test    工程名称<br>lib    Jar包的存放目录<br>src    源文件也就是文件(类，资源文件)存放的目录<br>test    测试用例文件(类、资源文件)测存放的目录<br>web    WEB根目录，存放WEB资源<br>WEB-INF    配置文件存放目录</p>
-<p>iml文件：<br>是项目标识文件，缺少了这个文件，IDEA就无法识别项目。跟Eclipse的.project文件性质是一样的。并且这些文件不同的设备上的内容也会有差异，所以我们在管理项目的时候，.project和.iml文件都需要忽略掉。</p>
+        <h1 id="原生jdbc程序的问题"><a href="#原生jdbc程序的问题" class="headerlink" title="原生jdbc程序的问题"></a>原生jdbc程序的问题</h1><p>1.对数据库进行频繁连接开启和关闭，造成资源浪费。<br><br>设想：使用数据库连接池管理数据库连接<br><br>2.sql语句硬编码到java代码中<br><br>设想：将sql语句配置在xml配置文件中。<br><br>3.向preparedstatement中设置参数，硬编码。<br><br>设想：将sql语句以及占位符和参数配置在xml中。<br><br>4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。<br><br>设想：将查询的结果集，自动映射成Java对象。</p>
+<h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍"></a>mybatis介绍</h1><p>是一个持久层框架，让程序将主要精力放在SQL上，通过mybatis提供映射方式，自由灵活生产满足需求的sql语句。<br><br>可以将preparestament<br>1.sqlmapconfig.xml 是mybatis的全局配置文件：配置了数据源，事务等mybatis运行环境。mapper.xml(映射文件)<br><br><br>2.sqlsessionfactory,会话工厂，创建sqlsession<br><br><br>3.sqlsession，是一个接口，会话：操作数据库，发出sql增删改查<br><br>4.executor,也是一个接口（基本执行器，缓存执行器）执行器，sqlsession内部通过执行器操作数据库。</p>
+<ol start="5">
+<li>mapped statement(底层封装对象)：对操作数据库存储封装，包括sql语句，输入参数，输出结果类型。</li>
+<li>mysql<h1 id="实际中应用"><a href="#实际中应用" class="headerlink" title="实际中应用"></a>实际中应用</h1></li>
+<li>映射文件：mapper标签，其中有select查询标签，#{}表示占位符，如果输入参数是简单类型，其中的参数名可以任意。<br></li>
+<li>在sqlmapconfig中加载配置文件。<br><br>selectone:查询一条记录进行映射。<br>selectlist:查询出一个列表 进行映射。</li>
+</ol>
+<h2 id="sqlsession的应用"><a href="#sqlsession的应用" class="headerlink" title="sqlsession的应用"></a>sqlsession的应用</h2><p>使用sqlsessionfactorybuilder创建会话工厂<br><br>再通过SQLsessionfactory创建sqlsession，在和spring整合后，使用单例模式管理sqlsessionfactory.<br><br><strong>sqlsession最佳应用场合再方法体内，定义成局部变量使用。</strong></p>
+<h1 id="mapper代理开发"><a href="#mapper代理开发" class="headerlink" title="mapper代理开发"></a>mapper代理开发</h1><p>1.程序员只需要编写mapper.xml映射文件。<br><br>2.程序员还要编写一些开发规范，mybatis可以自动生成mapper接口实现类代理对象。<br><br>开发规范：<br><br>1.再mapper.xml中namespace等于mapper接口地址。<br><br>2.mapper.java接口中的方法名和mapper.xml中statement的id一致。<br><br>3.mapper.java接口中的方法输入参数类型和paramentertype指定的类型一致。<br><br>4.mapper.java接口中的方法返回值类型和resultype指定的类型一致<br></p>
+<h1 id="动态sql"><a href="#动态sql" class="headerlink" title="动态sql"></a>动态sql</h1><p>通过表达式进行判断，对sql进行灵活拼接<br><br><br>if标签，</p>
+<h1 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h1><h1 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h1><h1 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h1><h1 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h1><p>即按需查询</p>
 
       
     </div>
@@ -346,8 +355,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/13/简单的学生管理系统/" rel="next" title="简单的学生管理系统">
-                <i class="fa fa-chevron-left"></i> 简单的学生管理系统
+              <a href="/2020/05/19/spring的事务管理/" rel="next" title="spring的事务管理">
+                <i class="fa fa-chevron-left"></i> spring的事务管理
               </a>
             
           </div>
@@ -356,8 +365,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/15/简易的管理系统总结/" rel="prev" title="简易的管理系统总结">
-                简易的管理系统总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/19/springMVC/" rel="prev" title="springMVC">
+                springMVC <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +490,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录名称-描述"><span class="nav-number">1.</span> <span class="nav-text">目录名称 描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原生jdbc程序的问题"><span class="nav-number">1.</span> <span class="nav-text">原生jdbc程序的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mybatis介绍"><span class="nav-number">2.</span> <span class="nav-text">mybatis介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际中应用"><span class="nav-number">3.</span> <span class="nav-text">实际中应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlsession的应用"><span class="nav-number">3.1.</span> <span class="nav-text">sqlsession的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mapper代理开发"><span class="nav-number">4.</span> <span class="nav-text">mapper代理开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态sql"><span class="nav-number">5.</span> <span class="nav-text">动态sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一对一"><span class="nav-number">6.</span> <span class="nav-text">一对一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一对多"><span class="nav-number">7.</span> <span class="nav-text">一对多</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多对多"><span class="nav-number">8.</span> <span class="nav-text">多对多</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延迟加载"><span class="nav-number">9.</span> <span class="nav-text">延迟加载</span></a></li></ol></div>
             
 
           </div>

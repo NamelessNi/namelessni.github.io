@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="什么是事务？事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。 事务的特性原子性：事务不可分割一致性：事务执行前后数据完整性保持一致。隔离性：一个事务的执行不受到其他事务的干扰。持久性：一旦事务结束，数据就持久化到数据库。 不考虑隔离性引发的安全性问题脏读不可重复读虚读，幻读丢失更新 解决读问题sping事务管理的apiPlatformTransactionManage:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-18T18:50:06.386Z">
+<meta property="og:updated_time" content="2020-05-18T19:09:54.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring的事务管理">
 <meta name="twitter:description" content="什么是事务？事务：逻辑上的一组操作，组成这组操作的各个单元，要么全部成功，要么全都失败。 事务的特性原子性：事务不可分割一致性：事务执行前后数据完整性保持一致。隔离性：一个事务的执行不受到其他事务的干扰。持久性：一旦事务结束，数据就持久化到数据库。 不考虑隔离性引发的安全性问题脏读不可重复读虚读，幻读丢失更新 解决读问题sping事务管理的apiPlatformTransactionManage:">
@@ -324,7 +324,9 @@
 <h2 id="不考虑隔离性引发的安全性问题"><a href="#不考虑隔离性引发的安全性问题" class="headerlink" title="不考虑隔离性引发的安全性问题"></a>不考虑隔离性引发的安全性问题</h2><p>脏读<br>不可重复读<br>虚读，幻读<br>丢失更新</p>
 <h2 id="解决读问题"><a href="#解决读问题" class="headerlink" title="解决读问题"></a>解决读问题</h2><h1 id="sping事务管理的api"><a href="#sping事务管理的api" class="headerlink" title="sping事务管理的api"></a>sping事务管理的api</h1><p>PlatformTransactionManage:平台事务管理器：接口，是spring用于管理事务的真正对象<br><br><br>transactiondefinition:事务定义信息，用于定义事务相关的信息，隔离级别，超时信息，传播行为，是否只读。<br><br><br>transactionstatus；事务的状态，用于记录在事务管理过程中，事务的状态的对象。<br></p>
 <h2 id="事务管理api的关系"><a href="#事务管理api的关系" class="headerlink" title="事务管理api的关系"></a>事务管理api的关系</h2><p>spring进行事务管理的时候，首先平台事务管理器根据事务定义信息进行事务的管理，在事务管理的过程种毁，产生各种状态，将这个状态信息记录到事务状态的对象中。</p>
-<h2 id="spring事务的传播行为用途"><a href="#spring事务的传播行为用途" class="headerlink" title="spring事务的传播行为用途"></a>spring事务的传播行为用途</h2><p>主要用来解决业务层烦方法相互调用的问题。</p>
+<h2 id="spring事务的传播行为用途"><a href="#spring事务的传播行为用途" class="headerlink" title="spring事务的传播行为用途"></a>spring事务的传播行为用途</h2><p>主要用来解决业务层方法相互调用的问题。</p>
+<h2 id="spring的事务管理"><a href="#spring的事务管理" class="headerlink" title="spring的事务管理"></a>spring的事务管理</h2><p>1.编程式事务（自己手动写）<br><br>第一步：配置平台事务管理器<br><br>第二步：spring提供了事务管理的模板<br><br>第三步：<br>第四步：</p>
+<h2 id="声明式事务管理（通过配置—aop）"><a href="#声明式事务管理（通过配置—aop）" class="headerlink" title="声明式事务管理（通过配置—aop）"></a>声明式事务管理（通过配置—aop）</h2><p>1.xml式<br>2.注解式</p>
 
       
     </div>
@@ -358,6 +360,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/19/mybatis/" rel="prev" title="mybatis">
+                mybatis <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -434,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -480,7 +486,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是事务？"><span class="nav-number">1.</span> <span class="nav-text">什么是事务？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务的特性"><span class="nav-number">2.</span> <span class="nav-text">事务的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不考虑隔离性引发的安全性问题"><span class="nav-number">2.1.</span> <span class="nav-text">不考虑隔离性引发的安全性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决读问题"><span class="nav-number">2.2.</span> <span class="nav-text">解决读问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sping事务管理的api"><span class="nav-number">3.</span> <span class="nav-text">sping事务管理的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务管理api的关系"><span class="nav-number">3.1.</span> <span class="nav-text">事务管理api的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring事务的传播行为用途"><span class="nav-number">3.2.</span> <span class="nav-text">spring事务的传播行为用途</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是事务？"><span class="nav-number">1.</span> <span class="nav-text">什么是事务？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务的特性"><span class="nav-number">2.</span> <span class="nav-text">事务的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不考虑隔离性引发的安全性问题"><span class="nav-number">2.1.</span> <span class="nav-text">不考虑隔离性引发的安全性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决读问题"><span class="nav-number">2.2.</span> <span class="nav-text">解决读问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sping事务管理的api"><span class="nav-number">3.</span> <span class="nav-text">sping事务管理的api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务管理api的关系"><span class="nav-number">3.1.</span> <span class="nav-text">事务管理api的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring事务的传播行为用途"><span class="nav-number">3.2.</span> <span class="nav-text">spring事务的传播行为用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring的事务管理"><span class="nav-number">3.3.</span> <span class="nav-text">spring的事务管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明式事务管理（通过配置—aop）"><span class="nav-number">3.4.</span> <span class="nav-text">声明式事务管理（通过配置—aop）</span></a></li></ol></li></ol></div>
             
 
           </div>

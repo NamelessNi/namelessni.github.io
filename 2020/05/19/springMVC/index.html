@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta name="description" content="1。创建项目 配置好环境 导入jar包。2.在WEB-INF目录下创建 web.xml配置Spring MVC的入口 DispatcherServlet，把所有的请求都提交到该Servlet3.在WEB-INF目录下创建 springmvc-servlet.xmlspringmvc-servlet.xml 与上一步中的servlet名字对应。这是Spring MVC的 映射配置文件表示访问路径/i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea中web项目的目录结构">
-<meta property="og:url" content="http://yoursite.com/2020/05/14/idea中web项目的目录结构/index.html">
+<meta property="og:title" content="springMVC">
+<meta property="og:url" content="http://yoursite.com/2020/05/19/springMVC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta property="og:description" content="1。创建项目 配置好环境 导入jar包。2.在WEB-INF目录下创建 web.xml配置Spring MVC的入口 DispatcherServlet，把所有的请求都提交到该Servlet3.在WEB-INF目录下创建 springmvc-servlet.xmlspringmvc-servlet.xml 与上一步中的servlet名字对应。这是Spring MVC的 映射配置文件表示访问路径/i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-13T18:12:23.501Z">
+<meta property="og:updated_time" content="2020-05-21T20:38:37.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea中web项目的目录结构">
-<meta name="twitter:description" content="1.out目录是输出java文件编译后生成的class文件。2.src目录就是放java代码的文件夹。3.webapp和web.xml是web项目的配置文件和资源目录4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。 目录名称 描述Test">
+<meta name="twitter:title" content="springMVC">
+<meta name="twitter:description" content="1。创建项目 配置好环境 导入jar包。2.在WEB-INF目录下创建 web.xml配置Spring MVC的入口 DispatcherServlet，把所有的请求都提交到该Servlet3.在WEB-INF目录下创建 springmvc-servlet.xmlspringmvc-servlet.xml 与上一步中的servlet名字对应。这是Spring MVC的 映射配置文件表示访问路径/i">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/14/idea中web项目的目录结构/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/19/springMVC/">
 
 
 
 
 
-  <title>idea中web项目的目录结构 | Hexo</title>
+  <title>springMVC | Hexo</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/idea中web项目的目录结构/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/19/springMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea中web项目的目录结构</h1>
+          <h1 class="post-title" itemprop="name headline">springMVC</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-14T02:07:42+08:00">
-                2020-05-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-19T12:12:46+08:00">
+                2020-05-19
               </time>
             
 
@@ -319,9 +319,10 @@
       
 
       
-        <p>1.out目录是输出java文件编译后生成的class文件。<br>2.src目录就是放java代码的文件夹。<br>3.webapp和web.xml是web项目的配置文件和资源目录<br>4.web rescourese 就是放资源目录包括前端等的目录，web.xml配置 webapp相关。现在webapp目录和web.xml已经有了一个小地球图标，表示这个目录已经被识别为web项目了。</p>
-<h2 id="目录名称-描述"><a href="#目录名称-描述" class="headerlink" title="目录名称 描述"></a>目录名称 描述</h2><p>Test    工程名称<br>lib    Jar包的存放目录<br>src    源文件也就是文件(类，资源文件)存放的目录<br>test    测试用例文件(类、资源文件)测存放的目录<br>web    WEB根目录，存放WEB资源<br>WEB-INF    配置文件存放目录</p>
-<p>iml文件：<br>是项目标识文件，缺少了这个文件，IDEA就无法识别项目。跟Eclipse的.project文件性质是一样的。并且这些文件不同的设备上的内容也会有差异，所以我们在管理项目的时候，.project和.iml文件都需要忽略掉。</p>
+        <p>1。创建项目 配置好环境 导入jar包。<br><br>2.在WEB-INF目录下创建 web.xml<br>配置Spring MVC的入口 DispatcherServlet，把所有的请求都提交到该Servlet<br><br>3.在WEB-INF目录下创建 springmvc-servlet.xml<br>springmvc-servlet.xml 与上一步中的servlet名字对应。这是Spring MVC的 映射配置文件<br>表示访问路径/index会交给id=indexController的bean处理<br><br>4.控制类 IndexController实现接口Controller ，提供方法handleRequest处理请求</p>
+<p>SpringMVC通过 ModelAndView 对象把模型和视图结合在一起<br>表示视图是index.jsp<br>模型数据是 message，内容是 “Hello Spring MVC”。<br>5.在WebContent目录下创建index.jsp</p>
+<p>index.jsp很简单，通过EL表达式显示message的内容。</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>1.Dispatcher的配置：由于 DispatcherServlet默认从test-servlet.xml（例子中）中载入应用上下文，为了保证所有配置文件都会被载入，你需要在web.xml中配置一个上下文载入器。有两种上下文载入器：ContextLoaderListener和ContextLoaderServlet。<br>可以在web.xml中这样配置ContextLoaderListener:<br>&lt;listener‘&gt;<br>    <listener-class>org.springframework.web.context.ContextLoaderLisetener<br>    </listener-class><br><br><br><br>DispatcherServlet默认从WEB-INF下寻找配置文件。<br><br>2.配置文件中，prefix是jsp所在的目录，suffix是后缀。<br><br>3.@RequestMapping注解，value的值为访问的路径，method用get，返回的是jsp文件<br><br>4.lib里面的文件需要手动添加到依赖库。</p>
 
       
     </div>
@@ -346,8 +347,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/13/简单的学生管理系统/" rel="next" title="简单的学生管理系统">
-                <i class="fa fa-chevron-left"></i> 简单的学生管理系统
+              <a href="/2020/05/19/mybatis/" rel="next" title="mybatis">
+                <i class="fa fa-chevron-left"></i> mybatis
               </a>
             
           </div>
@@ -356,8 +357,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/15/简易的管理系统总结/" rel="prev" title="简易的管理系统总结">
-                简易的管理系统总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/19/多线程/" rel="prev" title="多线程">
+                多线程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录名称-描述"><span class="nav-number">1.</span> <span class="nav-text">目录名称 描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
