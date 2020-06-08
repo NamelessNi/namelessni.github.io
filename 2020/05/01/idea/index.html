@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.Eclipse 中 workspace 相当于 IDEA 中的 ProjectEclipse 中 Project 相当于 IDEA 中的 Module2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 W">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-13T09:57:28.844Z">
+<meta property="og:updated_time" content="2020-06-08T10:41:11.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="idea">
 <meta name="twitter:description" content="1.Eclipse 中 workspace 相当于 IDEA 中的 ProjectEclipse 中 Project 相当于 IDEA 中的 Module2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 W">
@@ -319,7 +319,14 @@
       
 
       
-        <p>1.Eclipse 中 workspace 相当于 IDEA 中的 Project<br>Eclipse 中 Project 相当于 IDEA 中的 Module<br><br>2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 Window 窗口。<br>在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module。一个 Project 可以有多个 Module。目前主流的大型项目都是分布式部署的，结构都是类似这种多 Module 结构。<br><br>3.不管是创建 Class，还是 Interface，还是 Annotation，都是选择 New –&gt; Java Class，然后在 Kind 下拉框中选择创建的结构的类型。接着在类 HelloWorld 里声明主方法，输出 Hello World!，完成测试.<br><br>4.导包需要在File -&gt;  Project Structure-modeles-Dependencies<br>5.导入eclipse项目在file-new-project from exsiting<br>6.</p>
+        <p>1.Eclipse 中 workspace 相当于 IDEA 中的 Project<br>Eclipse 中 Project 相当于 IDEA 中的 Module<br><br>2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 Window 窗口。<br>在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module。一个 Project 可以有多个 Module。目前主流的大型项目都是分布式部署的，结构都是类似这种多 Module 结构。<br><br>3.不管是创建 Class，还是 Interface，还是 Annotation，都是选择 New –&gt; Java Class，然后在 Kind 下拉框中选择创建的结构的类型。接着在类 HelloWorld 里声明主方法，输出 Hello World!，完成测试.<br><br>4.导包需要在File -&gt;  Project Structure-modeles-Dependencies<br>5.导入eclipse项目在file-new-project from exsiting<br>6.groupId:是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构</p>
+<p>artifactId:就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称</p>
+<p>version:版本号 后缀为release:代表稳定的版本</p>
+<p>scope: 默认的依赖范围是compile</p>
+<p>1、test范围指的是测试范围有效，在编译和打包时都不会使用这个依赖</p>
+<p>2、compile范围指的是编译范围有效，在编译和打包时都会将依赖存储进去</p>
+<p>3、provided依赖：在编译和测试的过程有效，最后生成war包时不会加入，诸如：servlet-api，因为servlet-api，tomcat等web服务器已经存在了，如果再打包会冲突</p>
+<p>4、runtime在运行的时候依赖，在编译的时候不依赖</p>
 
       
     </div>
@@ -424,7 +431,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
