@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
+<meta name="description" content="spring的常用注解@Autowired@Autowired顾名思义，就是自动装配，其作用是为了消除代码Java代码里面的getter/setter与bean属性中的property。当然，getter看个人需求，如果私有属性需要对外提供的话，应当予以保留。 @Autowired默认按类型匹配的方式，在容器查找匹配的Bean，当有且仅有一个匹配的Bean时，Spring将其注入@Autowire">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mybatis">
-<meta property="og:url" content="http://yoursite.com/2020/05/19/mybatis/index.html">
+<meta property="og:title" content="spring,springmvc,mybatis的常用注解">
+<meta property="og:url" content="http://yoursite.com/2020/06/09/spring-springmvc-mybatis的常用注解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
+<meta property="og:description" content="spring的常用注解@Autowired@Autowired顾名思义，就是自动装配，其作用是为了消除代码Java代码里面的getter/setter与bean属性中的property。当然，getter看个人需求，如果私有属性需要对外提供的话，应当予以保留。 @Autowired默认按类型匹配的方式，在容器查找匹配的Bean，当有且仅有一个匹配的Bean时，Spring将其注入@Autowire">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-10T14:46:04.995Z">
+<meta property="og:updated_time" content="2020-06-08T18:02:18.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mybatis">
-<meta name="twitter:description" content="原生jdbc程序的问题1.对数据库进行频繁连接开启和关闭，造成资源浪费。设想：使用数据库连接池管理数据库连接2.sql语句硬编码到java代码中设想：将sql语句配置在xml配置文件中。3.向preparedstatement中设置参数，硬编码。设想：将sql语句以及占位符和参数配置在xml中。4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。设想：将查询">
+<meta name="twitter:title" content="spring,springmvc,mybatis的常用注解">
+<meta name="twitter:description" content="spring的常用注解@Autowired@Autowired顾名思义，就是自动装配，其作用是为了消除代码Java代码里面的getter/setter与bean属性中的property。当然，getter看个人需求，如果私有属性需要对外提供的话，应当予以保留。 @Autowired默认按类型匹配的方式，在容器查找匹配的Bean，当有且仅有一个匹配的Bean时，Spring将其注入@Autowire">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/19/mybatis/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/09/spring-springmvc-mybatis的常用注解/">
 
 
 
 
 
-  <title>mybatis | Hexo</title>
+  <title>spring,springmvc,mybatis的常用注解 | Hexo</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/19/mybatis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/spring-springmvc-mybatis的常用注解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mybatis</h1>
+          <h1 class="post-title" itemprop="name headline">spring,springmvc,mybatis的常用注解</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-19T12:12:31+08:00">
-                2020-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-09T01:35:21+08:00">
+                2020-06-09
               </time>
             
 
@@ -319,19 +319,20 @@
       
 
       
-        <h1 id="原生jdbc程序的问题"><a href="#原生jdbc程序的问题" class="headerlink" title="原生jdbc程序的问题"></a>原生jdbc程序的问题</h1><p>1.对数据库进行频繁连接开启和关闭，造成资源浪费。<br><br>设想：使用数据库连接池管理数据库连接<br><br>2.sql语句硬编码到java代码中<br><br>设想：将sql语句配置在xml配置文件中。<br><br>3.向preparedstatement中设置参数，硬编码。<br><br>设想：将sql语句以及占位符和参数配置在xml中。<br><br>4.从result中遍历结果集数据时，存在硬编码，将获取表的字段进行硬编码，不利于系统维护。<br><br>设想：将查询的结果集，自动映射成Java对象。</p>
-<h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍"></a>mybatis介绍</h1><p>是一个持久层框架，让程序将主要精力放在SQL上，通过mybatis提供映射方式，自由灵活生产满足需求的sql语句。<br><br>可以将preparestament<br>1.sqlmapconfig.xml 是mybatis的全局配置文件：配置了数据源，事务等mybatis运行环境。mapper.xml(映射文件)<br><br><br>2.sqlsessionfactory,会话工厂，创建sqlsession<br><br><br>3.sqlsession，是一个接口，会话：操作数据库，发出sql增删改查<br><br>4.executor,也是一个接口（基本执行器，缓存执行器）执行器，sqlsession内部通过执行器操作数据库。</p>
-<ol start="5">
-<li>mapped statement(底层封装对象)：对操作数据库存储封装，包括sql语句，输入参数，输出结果类型。</li>
-<li>mysql<h1 id="实际中应用"><a href="#实际中应用" class="headerlink" title="实际中应用"></a>实际中应用</h1></li>
-<li>映射文件：mapper标签，其中有select查询标签，#{}表示占位符，如果输入参数是简单类型，其中的参数名可以任意。<br></li>
-<li>在sqlmapconfig中加载配置文件。<br><br>selectone:查询一条记录进行映射。<br>selectlist:查询出一个列表 进行映射。</li>
-</ol>
-<h2 id="sqlsession的应用"><a href="#sqlsession的应用" class="headerlink" title="sqlsession的应用"></a>sqlsession的应用</h2><p>使用sqlsessionfactorybuilder创建会话工厂<br><br>再通过SQLsessionfactory创建sqlsession，在和spring整合后，使用单例模式管理sqlsessionfactory.<br><br><strong>sqlsession最佳应用场合再方法体内，定义成局部变量使用。</strong></p>
-<h1 id="mapper代理开发"><a href="#mapper代理开发" class="headerlink" title="mapper代理开发"></a>mapper代理开发</h1><p>1.程序员只需要编写mapper.xml映射文件。<br><br>2.程序员还要编写一些开发规范，mybatis可以自动生成mapper接口实现类代理对象。<br><br>开发规范：<br><br>1.再mapper.xml中namespace等于mapper接口地址。<br><br>2.mapper.java接口中的方法名和mapper.xml中statement的id一致。<br><br>3.mapper.java接口中的方法输入参数类型和paramentertype指定的类型一致。<br><br>4.mapper.java接口中的方法返回值类型和resultype指定的类型一致<br></p>
-<h1 id="动态sql"><a href="#动态sql" class="headerlink" title="动态sql"></a>动态sql</h1><p>通过表达式进行判断，对sql进行灵活拼接<br><br><br>if标签，</p>
-<h1 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h1><h1 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h1><h1 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h1><h1 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h1><p>即按需查询</p>
-<h2 id="Mapper-DAO层-接口如何实例化"><a href="#Mapper-DAO层-接口如何实例化" class="headerlink" title="Mapper(DAO层)接口如何实例化"></a>Mapper(DAO层)接口如何实例化</h2><p>dao层的接口在service层会注入一个实例化对象，直接可以使用，但我们并没有做dao层的实现类，在这里用jdk的动态代理创建了一个代理对象，也就是说，我们最终是对mapper的所有接口分别创建了各自的代理对象，通过代理对象来执行我们的sql</p>
+        <h1 id="spring的常用注解"><a href="#spring的常用注解" class="headerlink" title="spring的常用注解"></a>spring的常用注解</h1><h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><p>@Autowired顾名思义，就是自动装配，其作用是为了消除代码Java代码里面的getter/setter与bean属性中的property。当然，getter看个人需求，如果私有属性需要对外提供的话，应当予以保留。</p>
+<p>@Autowired默认按类型匹配的方式，在容器查找匹配的Bean，当有且仅有一个匹配的Bean时，Spring将其注入@Autowired标注的变量中。<br><br>@Autowired注解的意思就是，当Spring发现@Autowired注解时，将自动在代码上下文中找到和其匹配（默认是类型匹配）的Bean，并自动注入到相应的地方去。</p>
+<h2 id="Qualifier（指定注入Bean的名称）"><a href="#Qualifier（指定注入Bean的名称）" class="headerlink" title="@Qualifier（指定注入Bean的名称）"></a>@Qualifier（指定注入Bean的名称）</h2><p>比如一个接口有两个实现类，autowired就不知道匹配哪个。</p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h2><p>等于autowired+qualifier</p>
+<h2 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h2><p>@Component是所有受Spring 管理组件的通用形式。其中@Controller对应表现层的Bean，也就是Action。<br>@Service应用在service层。<br>@Repository对应数据访问层Bean</p>
+<h2 id="Scope"><a href="#Scope" class="headerlink" title="@Scope"></a>@Scope</h2><p>因为Spring默认产生的bean是单例的，假如我不想使用单例怎么办，xml文件里面可以在bean里面配置scope属性。注解也是一样，配置@Scope即可，默认是”singleton”即单例，”prototype”表示原型即每次都会new一个新的出来。</p>
+<h2 id="开启注解"><a href="#开启注解" class="headerlink" title="开启注解"></a>开启注解</h2><p>&lt;context:component-scan base-package=”cn.test”/&gt; </p>
+<h1 id="SpringMVC-常用注解"><a href="#SpringMVC-常用注解" class="headerlink" title="SpringMVC 常用注解"></a>SpringMVC 常用注解</h1><p>在SpringMVC 中，控制器Controller 负责处理由DispatcherServlet 分发的请求，它把用户请求的数据经过业务处理层处理之后封装成一个Model ，然后再把该Model 返回给对应的View 进行展示。在SpringMVC 中提供了一个非常简便的定义Controller 的方法，你无需继承特定的类或实现特定的接口，只需使用@Controller 标记一个类是Controller ，然后使用@RequestMapping 和@RequestParam 等一些注解用以定义URL 请求和Controller 方法之间的映射，这样的Controller 就能被外界访问到。此外Controller 不会直接依赖于HttpServletRequest 和HttpServletResponse 等HttpServlet 对象，它们可以通过Controller 的方法参数灵活的获取到。</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h2><p>@Controller 用于标记在一个类上，使用它标记的类就是一个SpringMVC Controller 对象。</p>
+<h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。<br>其有六个属性：<br>value， method；consumes，produces，params，headers<br><br>value： 指定请求的实际地址，指定的地址可以是URI Template 模式.<br><br>method：  指定请求的method类型， GET、POST、PUT、DELETE等；</p>
+<h2 id="Resource和-Autowired"><a href="#Resource和-Autowired" class="headerlink" title="@Resource和@Autowired"></a>@Resource和@Autowired</h2><p>同spring</p>
+<h2 id="ModelAttribute和-SessionAttributes"><a href="#ModelAttribute和-SessionAttributes" class="headerlink" title="@ModelAttribute和 @SessionAttributes"></a>@ModelAttribute和 @SessionAttributes</h2><p>该Controller的所有方法在调用前，先执行此@ModelAttribute方法，可用于注解和方法参数中，可以把这个@ModelAttribute特性，应用在BaseController当中，所有的Controller继承BaseController，即可实现在调用Controller时，先执行@ModelAttribute方法。<br><br>@SessionAttributes即将值放到session作用域中，写在class上面。</p>
+<h2 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h2><p>用于将请求URL中的模板变量映射到功能处理方法的参数上，即取出uri模板中的变量作为参数。</p>
+<h2 id="requestParam"><a href="#requestParam" class="headerlink" title="@requestParam"></a>@requestParam</h2><p>@requestParam主要用于在SpringMVC后台控制层获取参数，类似一种是request.getParameter(“name”)，它有三个常用参数：defaultValue = “0”, required = false, value = “isApp”；defaultValue 表示设置默认值，required 铜过boolean设置是否是必须要传入的参数，value 值表示接受的传入的参数类型。</p>
 
       
     </div>
@@ -356,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/19/spring的事务管理/" rel="next" title="spring的事务管理">
-                <i class="fa fa-chevron-left"></i> spring的事务管理
+              <a href="/2020/05/26/简单的学生管理系统ssm版/" rel="next" title="简单的学生管理系统ssm版">
+                <i class="fa fa-chevron-left"></i> 简单的学生管理系统ssm版
               </a>
             
           </div>
@@ -366,8 +367,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/19/springMVC/" rel="prev" title="springMVC">
-                springMVC <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/10/关于java的反射机制/" rel="prev" title="关于java的反射机制">
+                关于java的反射机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -491,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原生jdbc程序的问题"><span class="nav-number">1.</span> <span class="nav-text">原生jdbc程序的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mybatis介绍"><span class="nav-number">2.</span> <span class="nav-text">mybatis介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际中应用"><span class="nav-number">3.</span> <span class="nav-text">实际中应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlsession的应用"><span class="nav-number">3.1.</span> <span class="nav-text">sqlsession的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mapper代理开发"><span class="nav-number">4.</span> <span class="nav-text">mapper代理开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态sql"><span class="nav-number">5.</span> <span class="nav-text">动态sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一对一"><span class="nav-number">6.</span> <span class="nav-text">一对一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一对多"><span class="nav-number">7.</span> <span class="nav-text">一对多</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多对多"><span class="nav-number">8.</span> <span class="nav-text">多对多</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延迟加载"><span class="nav-number">9.</span> <span class="nav-text">延迟加载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mapper-DAO层-接口如何实例化"><span class="nav-number">9.1.</span> <span class="nav-text">Mapper(DAO层)接口如何实例化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的常用注解"><span class="nav-number">1.</span> <span class="nav-text">spring的常用注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired"><span class="nav-number">1.1.</span> <span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Qualifier（指定注入Bean的名称）"><span class="nav-number">1.2.</span> <span class="nav-text">@Qualifier（指定注入Bean的名称）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource"><span class="nav-number">1.3.</span> <span class="nav-text">@Resource</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Component"><span class="nav-number">1.4.</span> <span class="nav-text">@Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scope"><span class="nav-number">1.5.</span> <span class="nav-text">@Scope</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启注解"><span class="nav-number">1.6.</span> <span class="nav-text">开启注解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringMVC-常用注解"><span class="nav-number">2.</span> <span class="nav-text">SpringMVC 常用注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">2.1.</span> <span class="nav-text">@Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequestMapping"><span class="nav-number">2.2.</span> <span class="nav-text">@RequestMapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource和-Autowired"><span class="nav-number">2.3.</span> <span class="nav-text">@Resource和@Autowired</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ModelAttribute和-SessionAttributes"><span class="nav-number">2.4.</span> <span class="nav-text">@ModelAttribute和 @SessionAttributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PathVariable"><span class="nav-number">2.5.</span> <span class="nav-text">@PathVariable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#requestParam"><span class="nav-number">2.6.</span> <span class="nav-text">@requestParam</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,17 +79,16 @@
 
 
 
-<meta name="description" content="1.Eclipse 中 workspace 相当于 IDEA 中的 ProjectEclipse 中 Project 相当于 IDEA 中的 Module2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 W">
-<meta property="og:type" content="article">
-<meta property="og:title" content="idea">
-<meta property="og:url" content="http://yoursite.com/2020/05/01/idea/index.html">
+<meta name="description" content="这是一个督促自己的小站">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.Eclipse 中 workspace 相当于 IDEA 中的 ProjectEclipse 中 Project 相当于 IDEA 中的 Module2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 W">
+<meta property="og:description" content="这是一个督促自己的小站">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-08T10:41:11.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea">
-<meta name="twitter:description" content="1.Eclipse 中 workspace 相当于 IDEA 中的 ProjectEclipse 中 Project 相当于 IDEA 中的 Module2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 W">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="这是一个督促自己的小站">
 
 
 
@@ -119,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/01/idea/">
+  <link rel="canonical" href="http://yoursite.com/page/3/">
 
 
 
 
 
-  <title>idea | Hexo</title>
+  <title>Hexo</title>
   
 
 
@@ -144,7 +143,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +237,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/idea/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/javase2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="light">
@@ -269,7 +269,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/28/javase2/" itemprop="url">javase2</a></h1>
         
 
         <div class="post-meta">
@@ -281,8 +283,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-01T17:25:39+08:00">
-                2020-05-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T16:53:00+08:00">
+                2020-04-28
               </time>
             
 
@@ -319,15 +321,21 @@
       
 
       
-        <p>1.Eclipse 中 workspace 相当于 IDEA 中的 Project<br>Eclipse 中 Project 相当于 IDEA 中的 Module<br><br>2.从 Eclipse 转过来的人总是下意识地要在同一个窗口管理 n 个项目，这在 IntelliJ IDEA 是无法做到的。IntelliJ IDEA 提供的解决方案是打开多个项目实例，即打开多个项目窗口。即：一个 Project 打开一个 Window 窗口。<br>在 IntelliJ IDEA 中 Project 是最顶级的级别，次级别是 Module。一个 Project 可以有多个 Module。目前主流的大型项目都是分布式部署的，结构都是类似这种多 Module 结构。<br><br>3.不管是创建 Class，还是 Interface，还是 Annotation，都是选择 New –&gt; Java Class，然后在 Kind 下拉框中选择创建的结构的类型。接着在类 HelloWorld 里声明主方法，输出 Hello World!，完成测试.<br><br>4.导包需要在File -&gt;  Project Structure-modeles-Dependencies<br>5.导入eclipse项目在file-new-project from exsiting<br>6.groupId:是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构</p>
-<p>artifactId:就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称</p>
-<p>version:版本号 后缀为release:代表稳定的版本</p>
-<p>scope: 默认的依赖范围是compile</p>
-<p>1、test范围指的是测试范围有效，在编译和打包时都不会使用这个依赖</p>
-<p>2、compile范围指的是编译范围有效，在编译和打包时都会将依赖存储进去</p>
-<p>3、provided依赖：在编译和测试的过程有效，最后生成war包时不会加入，诸如：servlet-api，因为servlet-api，tomcat等web服务器已经存在了，如果再打包会冲突</p>
-<p>4、runtime在运行的时候依赖，在编译的时候不依赖</p>
+        
+          
+          异常异常定义导致程序的正常流程被中断的事件，叫做异常
+异常处理try catch1.将可能抛出FileNotFoundException 文件不存在异常的代码放在try里2.如果文件存在，就会顺序往下执行，并且不执行catch块中的代码
 
+如果文件不存在，try 里的代码会立即终止，程序流程会运行到
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/28/javase2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -344,32 +352,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/04/29/spring/" rel="next" title="spring">
-                <i class="fa fa-chevron-left"></i> spring
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/13/简单的学生管理系统/" rel="prev" title="简单的学生管理系统">
-                简单的学生管理系统 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -379,11 +367,399 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/javase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="light">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/27/javase/" itemprop="url">javase</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-27T17:54:35+08:00">
+                2020-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          public static void main(String[] args)是什么意思？
+1.public static void main(String[] args)，是java程序的入口地址，java虚拟机运行程序的时候首先找的就是main方法。
+2.public”表示程序的访问权限，表示的是
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/27/javase/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/静态、动态代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="light">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/15/静态、动态代理/" itemprop="url">静态、动态代理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T19:01:02+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          代理模式中的所有角色（代理对象、目标对象、目标对象的接口）等都是在编译期就确定好的。
+静态代理的用途 控制真实对象的访问权限 通过代理对象控制对真实对象的使用权限。
+避免创建大对象 通过使用一个代理小对象来代表一个真实的大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。
+增强真实对象的功
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/15/静态、动态代理/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="light">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/05/test/" itemprop="url">test</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T02:22:46+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+java基础面向对象面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护。但是，面向对象性能比面向过程低。
+构造器 Constructor 是否可被 override?在讲继承的时候我们就知道父类的私有属性和构造方法并不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/05/test/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -391,10 +767,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -605,10 +977,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

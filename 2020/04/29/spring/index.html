@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-17T19:08:40.857Z">
+<meta property="og:updated_time" content="2020-06-10T10:16:30.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring">
 <meta name="twitter:description" content="介绍Spring是一个基于IOC和AOP的结构J2EE系统的框架IOC 反转控制 是Spring的基础，Inversion Of Control简单说就是创建对象由以前的程序员自己new 构造方法来调用，变成了交由Spring创建对象DI 依赖注入 Dependency Inject. 简单地说就是拿到的对象的属性，已经被注入好相关值了，直接使用即可。以获取对象的方式来进行比较 传统的方式：通过n">
@@ -330,6 +330,7 @@
 <h1 id="p名称空间的属性注入"><a href="#p名称空间的属性注入" class="headerlink" title="p名称空间的属性注入"></a>p名称空间的属性注入</h1><p>通过引入p名称空间的属性注入<br><br>写法：普通属性   p:属性名=”值”<br><br> 对象 p：对象名-ref=”值”<br></p>
 <h1 id="spel的属性注入"><a href="#spel的属性注入" class="headerlink" title="spel的属性注入"></a>spel的属性注入</h1><p>spring的表达式语言。</p>
 <h1 id="集合类型的属性注入"><a href="#集合类型的属性注入" class="headerlink" title="集合类型的属性注入"></a>集合类型的属性注入</h1><p>注入数组类型：用property的标签 &lt;‘list&gt;&lt;’value&gt;值&lt;/value’&gt;&lt;/list‘&gt;<br></p>
+<h2 id="spring中哪些类需要作为bean来进行注入管理"><a href="#spring中哪些类需要作为bean来进行注入管理" class="headerlink" title="spring中哪些类需要作为bean来进行注入管理"></a>spring中哪些类需要作为bean来进行注入管理</h2><p>spring管理的类，就是spring在启动的时候，在spring容器中，由spring给你创建的，也就new的，spring会帮你维护。一般都是单例的，也就是一个对象。<br>需要自己new的实例，一般是数据实例，比如你要插入一条数据，就需要自己new。因为这些实例，包含数据信息，每个实例都是不同的，当然不能是单例模式的，也就不能使用注入。<br>spring管理的一般都是逻辑类，是单例，是线程安全的。<br>当然，逻辑类中可以有数据类，这时候你可以在程序中new</p>
 
       
     </div>
@@ -443,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -489,7 +490,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc的底层实现"><span class="nav-number">2.</span> <span class="nav-text">ioc的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc和di的区别"><span class="nav-number">3.</span> <span class="nav-text">ioc和di的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的工厂类"><span class="nav-number">4.</span> <span class="nav-text">spring的工厂类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的配置"><span class="nav-number">5.</span> <span class="nav-text">spring的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean的相关配置"><span class="nav-number">6.</span> <span class="nav-text">Bean的相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性注入的方式"><span class="nav-number">7.</span> <span class="nav-text">属性注入的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p名称空间的属性注入"><span class="nav-number">8.</span> <span class="nav-text">p名称空间的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spel的属性注入"><span class="nav-number">9.</span> <span class="nav-text">spel的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合类型的属性注入"><span class="nav-number">10.</span> <span class="nav-text">集合类型的属性注入</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc的底层实现"><span class="nav-number">2.</span> <span class="nav-text">ioc的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc和di的区别"><span class="nav-number">3.</span> <span class="nav-text">ioc和di的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的工厂类"><span class="nav-number">4.</span> <span class="nav-text">spring的工厂类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的配置"><span class="nav-number">5.</span> <span class="nav-text">spring的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean的相关配置"><span class="nav-number">6.</span> <span class="nav-text">Bean的相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性注入的方式"><span class="nav-number">7.</span> <span class="nav-text">属性注入的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#p名称空间的属性注入"><span class="nav-number">8.</span> <span class="nav-text">p名称空间的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spel的属性注入"><span class="nav-number">9.</span> <span class="nav-text">spel的属性注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合类型的属性注入"><span class="nav-number">10.</span> <span class="nav-text">集合类型的属性注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring中哪些类需要作为bean来进行注入管理"><span class="nav-number">10.1.</span> <span class="nav-text">spring中哪些类需要作为bean来进行注入管理</span></a></li></ol></li></ol></div>
             
 
           </div>
