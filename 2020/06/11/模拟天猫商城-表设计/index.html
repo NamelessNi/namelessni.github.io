@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="这是一个督促自己的小站">
+<meta name="description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟天猫商城-表设计">
 <meta property="og:url" content="http://yoursite.com/2020/06/11/模拟天猫商城-表设计/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是一个督促自己的小站">
+<meta property="og:description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-11T03:59:21.314Z">
+<meta property="og:updated_time" content="2020-07-06T16:32:43.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟天猫商城-表设计">
-<meta name="twitter:description" content="这是一个督促自己的小站">
+<meta name="twitter:description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
 
 
 
@@ -319,7 +319,19 @@
       
 
       
-        
+        <h1 id="需要什么表"><a href="#需要什么表" class="headerlink" title="需要什么表"></a>需要什么表</h1><p>用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。</p>
+<h1 id="表之间的关系"><a href="#表之间的关系" class="headerlink" title="表之间的关系"></a>表之间的关系</h1><p>用户表-一对多-评价表，一对多-订单表；<br></p>
+<h1 id="分类表"><a href="#分类表" class="headerlink" title="分类表"></a>分类表</h1><p>存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的 16 个分类：<br><br>CREATE TABLE category (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  name varchar(255) NOT NULL COMMENT ‘分类的名字’,<br>  PRIMARY KEY (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="商品分类右边的超链表"><a href="#商品分类右边的超链表" class="headerlink" title="商品分类右边的超链表"></a>商品分类右边的超链表</h1><p>即在【天猫国际】右边的 8 个超链，我们单独新建一个表来存储超链显示的文字和链接的地址，这样就可以任意的修改其内容：<br><br>CREATE TABLE referal_link (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  text varchar(255) NOT NULL COMMENT ‘超链显示的文字’,<br>  link varchar(255) NOT NULL COMMENT ‘超链的地址’,<br>  PRIMARY KEY (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="产品表"><a href="#产品表" class="headerlink" title="产品表"></a>产品表</h1><p>每个分类下都要一定的产品，这些产品还有自己的一些属性，所以另外需要属性表，这个表另外创建，我们先来观察一下一个产品表需要一些什么东西：<br><br><br>用于展示的 5 张图片,产品名称,小标题（即名称下面一排标红的小字）,价格（就一口价，没别的）,销量（别月销量了，能简化就简化一下）,累计评价（还需要设计一个评价表）,库存,属性（需要关联另外的属性表）:<br><br><br>CREATE TABLE product (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  name varchar(255) NOT NULL COMMENT ‘产品的名称’,<br>  sub_title varchar(255) DEFAULT NULL COMMENT ‘小标题’,<br>  price float DEFAULT NULL COMMENT ‘价格’,<br>  sale int(11) DEFAULT NULL COMMENT ‘销量’,<br>  stock int(11) DEFAULT NULL COMMENT ‘库存’,<br>  category_id int(11) DEFAULT NULL COMMENT ‘对应的分类id’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_product_category FOREIGN KEY (category_id) REFERENCES category (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="属性表"><a href="#属性表" class="headerlink" title="属性表"></a>属性表</h1><p>去掉详细的规格参数划分，其实属性也就是一个名字而已:<br><br>CREATE TABLE property (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  name varchar(255) DEFAULT NULL COMMENT ‘属性名称’,<br>  product_id int(11) NOT NULL COMMENT ‘对应的产品id’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_property_product FOREIGN KEY (product_id) REFERENCES product(id)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p>
+<h1 id="属性值表"><a href="#属性值表" class="headerlink" title="属性值表"></a>属性值表</h1><p>其中就是保存了对应属性的值，并且应该有两个外键，一个指向 Property 表，而另一个则指向 Product 表:<br><br>CREATE TABLE property_value (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  product_id int(11) NOT NULL COMMENT ‘对应产品id’,<br>  properti_id int(11) NOT NULL COMMENT ‘对应属性id’,<br>  value varchar(255) DEFAULT NULL COMMENT ‘具体的属性值’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_property_value_property FOREIGN KEY (properti_id) REFERENCES property (id),<br>  CONSTRAINT fk_property_value_product FOREIGN KEY (product_id) REFERENCES product (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="产品图片表"><a href="#产品图片表" class="headerlink" title="产品图片表"></a>产品图片表</h1><p>这个表名义上是保存了产品的图片，其实只是保存了产品图片的位置即图片名称，我们可以规定所有的产品图片都放在一个统一的文件夹下面，然后通过 id 来获取对应名称的图片：<br><br>CREATE TABLE product_image (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  product_id int(11) DEFAULT NULL COMMENT ‘对应的产品id’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_product_image_product FOREIGN KEY (product_id) REFERENCES product (id)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p>
+<h1 id="用户表"><a href="#用户表" class="headerlink" title="用户表"></a>用户表</h1><p>用户表很简单，也没有权限之类的东西：<br><br>CREATE TABLE user (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  name varchar(255) NOT NULL COMMENT ‘用户名称’,<br>  password varchar(255) NOT NULL COMMENT ‘用户密码’,<br>  PRIMARY KEY (id)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p>
+<h1 id="评价表"><a href="#评价表" class="headerlink" title="评价表"></a>评价表</h1><p>评价表对应了用户和产品两个表，也比较简单，我们为了简单，把上面红色的部分全部砍掉，因为没有商家，所以也不需要回复用户的评价，都砍掉砍掉！:<br><br>CREATE TABLE review (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  content varchar(4000) DEFAULT NULL COMMENT ‘评价内容’,<br>  user_id int(11) NOT NULL COMMENT ‘对应的用户id’,<br>  product_id int(11) NOT NULL COMMENT ‘对应的产品id’,<br>  createDate datetime DEFAULT NULL COMMENT ‘评价时间’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_review_product FOREIGN KEY (product_id) REFERENCES product (id),<br>    CONSTRAINT fk_review_user FOREIGN KEY (user_id) REFERENCES user (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="订单表"><a href="#订单表" class="headerlink" title="订单表"></a>订单表</h1><p>由于 Order 是 MySql 的一个关键字，所以我们在订单表的最后添加一个下划线：<br><br>CREATE TABLE order_ (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  order_code varchar(255) NOT NULL COMMENT ‘订单号’,<br>  address varchar(255) NOT NULL COMMENT ‘收货地址’,<br>  post varchar(255) NOT NULL COMMENT ‘邮编’,<br>  receiver varchar(255) NOT NULL COMMENT ‘收货人姓名’,<br>  mobile varchar(255) NOT NULL COMMENT ‘手机号码’,<br>  user_message varchar(255) NOT NULL COMMENT ‘用户备注的信息’,<br>  create_date datetime NOT NULL COMMENT ‘订单创建时间’,<br>  pay_date datetime DEFAULT NULL COMMENT ‘订单支付时间’,<br>  delivery_date datetime DEFAULT NULL COMMENT ‘发货日期’,<br>  confirm_date datetime DEFAULT NULL COMMENT ‘确认收货日期’,<br>  user_id int(11) DEFAULT NULL COMMENT ‘对应的用户id’,<br>  status varchar(255) NOT NULL COMMENT ‘订单状态’,<br>  PRIMARY KEY (id),<br>  CONSTRAINT fk_order_user FOREIGN KEY (user_id) REFERENCES user (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+<h1 id="订单项表"><a href="#订单项表" class="headerlink" title="订单项表"></a>订单项表</h1><p>一个订单里面可能有多个订单项，一个产品也可能对应多个订单项，所以这个表应该有两个外键：<br><br>CREATE TABLE order_item (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  product_id int(11) NOT NULL COMMENT ‘对应产品id’,<br>  order_id int(11) NOT NULL COMMENT ‘对应订单id’,<br>  number int(11) DEFAULT NULL COMMENT ‘对应产品购买的数量’,<br>  PRIMARY KEY (id) COMMENT ‘邮编’,<br>  CONSTRAINT fk_order_item_product FOREIGN KEY (product_id) REFERENCES product (id),<br>  CONSTRAINT fk_order_item_order FOREIGN KEY (order_id) REFERENCES order_ (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
+
       
     </div>
     
@@ -407,8 +419,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -423,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -459,6 +480,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要什么表"><span class="nav-number">1.</span> <span class="nav-text">需要什么表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表之间的关系"><span class="nav-number">2.</span> <span class="nav-text">表之间的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类表"><span class="nav-number">3.</span> <span class="nav-text">分类表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#商品分类右边的超链表"><span class="nav-number">4.</span> <span class="nav-text">商品分类右边的超链表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品表"><span class="nav-number">5.</span> <span class="nav-text">产品表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性表"><span class="nav-number">6.</span> <span class="nav-text">属性表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性值表"><span class="nav-number">7.</span> <span class="nav-text">属性值表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品图片表"><span class="nav-number">8.</span> <span class="nav-text">产品图片表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户表"><span class="nav-number">9.</span> <span class="nav-text">用户表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评价表"><span class="nav-number">10.</span> <span class="nav-text">评价表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#订单表"><span class="nav-number">11.</span> <span class="nav-text">订单表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#订单项表"><span class="nav-number">12.</span> <span class="nav-text">订单项表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
