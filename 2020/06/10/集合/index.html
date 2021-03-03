@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="这是一个督促自己的小站">
+<meta name="description" content="CollectionListlist 和set 有共同的父类 它们的用法也是一样的 唯一的不太就是set中不能有相同的元素 list中可以。list和set的用途非常广泛 list可以完全代替数组来使用。 ArrayList常用ArrayList实现了可变大小的数组。它允许所有元素，包括null。ArrayList没有同步。size，isEmpty，get，set方法运行时间为常数。但是add方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程详解">
+<meta property="og:title" content="集合框架">
 <meta property="og:url" content="http://yoursite.com/2020/06/10/集合/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是一个督促自己的小站">
+<meta property="og:description" content="CollectionListlist 和set 有共同的父类 它们的用法也是一样的 唯一的不太就是set中不能有相同的元素 list中可以。list和set的用途非常广泛 list可以完全代替数组来使用。 ArrayList常用ArrayList实现了可变大小的数组。它允许所有元素，包括null。ArrayList没有同步。size，isEmpty，get，set方法运行时间为常数。但是add方法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-10T15:30:59.401Z">
+<meta property="og:updated_time" content="2020-07-21T17:40:54.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程详解">
-<meta name="twitter:description" content="这是一个督促自己的小站">
+<meta name="twitter:title" content="集合框架">
+<meta name="twitter:description" content="CollectionListlist 和set 有共同的父类 它们的用法也是一样的 唯一的不太就是set中不能有相同的元素 list中可以。list和set的用途非常广泛 list可以完全代替数组来使用。 ArrayList常用ArrayList实现了可变大小的数组。它允许所有元素，包括null。ArrayList没有同步。size，isEmpty，get，set方法运行时间为常数。但是add方法">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>多线程详解 | Hexo</title>
+  <title>集合框架 | Hexo</title>
   
 
 
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多线程详解</h1>
+          <h1 class="post-title" itemprop="name headline">集合框架</h1>
         
 
         <div class="post-meta">
@@ -319,7 +319,18 @@
       
 
       
-        
+        <h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>list 和set 有共同的父类 它们的用法也是一样的 唯一的不太就是set中不能有相同的元素 list中可以。<br>list和set的用途非常广泛 list可以完全代替数组来使用。</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p><strong>常用</strong><br>ArrayList实现了可变大小的数组。它允许所有元素，包括null。ArrayList没有同步。size，isEmpty，get，set方法运行时间为常数。但是add方法开销为分摊的常数，添加n个元素需要O(n)的时间。其他的方法运行时间为线性。每个ArrayList实例都有一个容量（Capacity），即用于存储元素的数组的大小。这个容量可随着不断添加新元素而自动增加，但是增长算法并 没有定义。当需要插入大量元素时，在插入前可以调用ensureCapacity方法来增加ArrayList的容量以提高插入效率。和LinkedList一样，ArrayList也是非同步的（unsynchronized）。特点是：寻址容易，插入和删除困难；</p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>LinkedList实现了List接口，允许null元素。此外LinkedList提供额外的get，remove，insert方法在 LinkedList的首部或尾部。这些操作使LinkedList可被用作堆栈（stack），队列（queue）或双向队列（deque）。注意LinkedList没有同步方法。如果多个线程同时访问一个List，则必须自己实现访问同步。一种解决方法是在创建List时构造一个同步的List：<br>　List list = Collections.synchronizedList(new LinkedList(…));</p>
+<p> 特点：寻址困难，插入和删除容易。</p>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>了解，已过时。Vector非常类似ArrayList，但是Vector是同步的。</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>list 和set 有共同的父类 它们的用法也是一样的 唯一的不太一样的就是set中不能有相同的元素 list中可以</p>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p><strong>常用</strong><br>它不允许出现重复元素；<br>不保证集合中元素的顺序<br>允许包含值为null的元素，但最多只能有一个null元素。<br>HashSet的实现是不同步的。</p>
+<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet类实现 Set 接口，该接口由 TreeMap 实例支持。此类保证排序后的 set 按照升序排列元素，根据使用的构造方法不同，可能会按照元素的自然顺序 进行排序，或按照在创建 set 时所提供的比较器进行排序。TreeSet描述的是Set的一种变体——可以实现排序等功能的集合，它在将对象元素添加到集合中时会自动按照某种比较规则将其插入到有序的对象序列中.HashSet是基于Hash算法实现的,其性能通常优于TreeSet,我们通常都应该使用HashSet,在我们需要排序的功能时,我门才使用TreeSet;</p>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><p>map 是独立的合集 它使用键值对的方式来储存数据 键不能有重复的 值可以用。<br>map不像上边两种集合那个用的广泛 不过在servlet 和jsp中 map可是绝对的重中之重 页面之间传值全靠map。</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>常用<br>HashMap和Hashtable类似，不同之处在于HashMap是非同步的，并且允许null，即null value和null key。其迭代子操作时间开销和HashMap 的容量成比例,因此，不要将HashMap的初始化容量设得过高，或者load factor过低。<br>HashMap的遍历有两种常用的方法，那就是使用keyset及entryset来进行遍历方法一：   Map map = new HashMap();<br>　　     Iterator iter = map.entrySet().iterator();<br>　　     while (iter.hasNext()) {<br>　　     Map.Entry entry = (Map.Entry) iter.next();<br>　　     Object key = entry.getKey();<br>　　     Object val = entry.getValue();<br>　　}<br>效率高,以后尽量要使用此种方式！</p>
+<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p>了解，已过时</p>
+
       
     </div>
     
@@ -407,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -423,7 +443,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -460,6 +480,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection"><span class="nav-number">1.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.1.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.1.2.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector"><span class="nav-number">1.1.3.</span> <span class="nav-text">Vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set"><span class="nav-number">1.2.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet"><span class="nav-number">1.2.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.2.2.</span> <span class="nav-text">TreeSet</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Map"><span class="nav-number">2.</span> <span class="nav-text">Map</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap"><span class="nav-number">2.1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeMap"><span class="nav-number">2.2.</span> <span class="nav-text">TreeMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-number">2.3.</span> <span class="nav-text">ConcurrentHashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable"><span class="nav-number">2.4.</span> <span class="nav-text">Hashtable</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -473,7 +509,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

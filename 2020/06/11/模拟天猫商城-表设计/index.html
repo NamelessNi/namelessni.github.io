@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
+<meta name="description" content="需要什么表1.用户表user：存放用户信息，如斩手狗，千手小粉红2.评价表review：存放评论信息，如买回来的蜡烛很好用，么么哒3.产品表product：存放产品信息，如LED40EC平板电视机，海尔EC6005热水器4，属性表property：存放属性信息，如颜色，重量，品牌，厂商，型号等5，属性值表propertyvalue：存放属性值信息，如重量是900g,颜色是粉红色6,分类表categ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟天猫商城-表设计">
 <meta property="og:url" content="http://yoursite.com/2020/06/11/模拟天猫商城-表设计/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
+<meta property="og:description" content="需要什么表1.用户表user：存放用户信息，如斩手狗，千手小粉红2.评价表review：存放评论信息，如买回来的蜡烛很好用，么么哒3.产品表product：存放产品信息，如LED40EC平板电视机，海尔EC6005热水器4，属性表property：存放属性信息，如颜色，重量，品牌，厂商，型号等5，属性值表propertyvalue：存放属性值信息，如重量是900g,颜色是粉红色6,分类表categ">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-06T16:32:43.548Z">
+<meta property="og:updated_time" content="2020-07-16T17:02:28.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟天猫商城-表设计">
-<meta name="twitter:description" content="需要什么表用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。 表之间的关系用户表-一对多-评价表，一对多-订单表； 分类表存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的">
+<meta name="twitter:description" content="需要什么表1.用户表user：存放用户信息，如斩手狗，千手小粉红2.评价表review：存放评论信息，如买回来的蜡烛很好用，么么哒3.产品表product：存放产品信息，如LED40EC平板电视机，海尔EC6005热水器4，属性表property：存放属性信息，如颜色，重量，品牌，厂商，型号等5，属性值表propertyvalue：存放属性值信息，如重量是900g,颜色是粉红色6,分类表categ">
 
 
 
@@ -319,7 +319,7 @@
       
 
       
-        <h1 id="需要什么表"><a href="#需要什么表" class="headerlink" title="需要什么表"></a>需要什么表</h1><p>用户表user，评价表review,产品表product，属性表property，属性值表propertyvalue,分类表category，推荐超链表referal_link，订单表order，订单项表orderilem,产品图片表productimage。</p>
+        <h1 id="需要什么表"><a href="#需要什么表" class="headerlink" title="需要什么表"></a>需要什么表</h1><p>1.用户表user：存放用户信息，如斩手狗，千手小粉红<br><br>2.评价表review：存放评论信息，如买回来的蜡烛很好用，么么哒<br><br>3.产品表product：存放产品信息，如LED40EC平板电视机，海尔EC6005热水器<br><br>4，属性表property：存放属性信息，如颜色，重量，品牌，厂商，型号等<br><br>5，属性值表propertyvalue：存放属性值信息，如重量是900g,颜色是粉红色<br><br>6,分类表category：存放分类信息，如女装，平板电视，沙发等<br><br>7，推荐超链表referal_link<br><br>8，订单表order：存放订单信息，包括邮寄地址，电话号码等信息<br><br>9，订单项表orderilem：存放订单项信息，包括购买产品种类，数量等<br><br>10,产品图片表productimage：存放产品图片信息，如产品页显示的5个图片<br></p>
 <h1 id="表之间的关系"><a href="#表之间的关系" class="headerlink" title="表之间的关系"></a>表之间的关系</h1><p>用户表-一对多-评价表，一对多-订单表；<br></p>
 <h1 id="分类表"><a href="#分类表" class="headerlink" title="分类表"></a>分类表</h1><p>存储我们的分类信息，也就是【女装/内衣】、【男装/运动户外】在内的 16 个分类：<br><br>CREATE TABLE category (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  name varchar(255) NOT NULL COMMENT ‘分类的名字’,<br>  PRIMARY KEY (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
 <h1 id="商品分类右边的超链表"><a href="#商品分类右边的超链表" class="headerlink" title="商品分类右边的超链表"></a>商品分类右边的超链表</h1><p>即在【天猫国际】右边的 8 个超链，我们单独新建一个表来存储超链显示的文字和链接的地址，这样就可以任意的修改其内容：<br><br>CREATE TABLE referal_link (<br>  id int(11) NOT NULL AUTO_INCREMENT COMMENT ‘唯一索引id’,<br>  text varchar(255) NOT NULL COMMENT ‘超链显示的文字’,<br>  link varchar(255) NOT NULL COMMENT ‘超链的地址’,<br>  PRIMARY KEY (id)<br>) ENGINE=InnoDB  DEFAULT CHARSET=utf8;</p>
@@ -355,8 +355,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/10/集合/" rel="next" title="多线程详解">
-                <i class="fa fa-chevron-left"></i> 多线程详解
+              <a href="/2020/06/10/集合/" rel="next" title="集合框架">
+                <i class="fa fa-chevron-left"></i> 集合框架
               </a>
             
           </div>
@@ -444,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -510,7 +510,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
